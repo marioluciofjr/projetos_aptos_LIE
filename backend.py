@@ -32,22 +32,14 @@ if api_key:
 
     st.markdown("""
     <style>
-    .main {
-        max-width: 800px;
-        margin: auto;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-    st.markdown("""
-    <style>
     .stButton>button {
-        background-color: #4CAF50;
-        color: white;
+        background-color: #230023;
+        color: #f2f2f2;
         border-radius: 12px;
     }
     .stButton>button:hover {
-        background-color: #45a049;
+        background-color: #42ffff;
+        color: #230023;
         transform: scale(1.05);
         transition: 0.3s;
     }
