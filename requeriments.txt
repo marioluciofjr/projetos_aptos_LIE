@@ -1,4 +1,2 @@
 google-generativeai==0.7.2
 pandas==2.2.2
-gspread==5.7.2
-oauth2client==4.1.3
