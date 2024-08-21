@@ -127,4 +127,4 @@ if api_key:
 
     # Botão de Limpar a Consulta
     if st.button("Limpar consulta"):
-        st.experimental_rerun()
+        st.session_state['resposta_faq'] = ""  # Limpar a resposta armazenada
