@@ -9,7 +9,24 @@ Saiba como gerar sua API Key ---> https://github.com/marioluciofjr/iabout#como-g
 # Configuração do modelo Gemini
 if api_key:
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel(model_name='gemini-1.5-flash')
+    model = genai.GenerativeModel(model_name='gemini-1.5-flash',
+                                      generation_config={
+                                          "candidate_count": 1,
+                                          "temperature": 0.75,
+                                          "top_k": 40,
+                                          "top_p": 0.95
+                                      },
+                                      safety_settings={
+                                          'HATE': 'BLOCK_NONE',
+                                          'HARASSMENT': 'BLOCK_NONE',
+                                          'SEXUAL': 'BLOCK_NONE',
+                                          'DANGEROUS': 'BLOCK_NONE'
+                                      },
+                                      system_instruction="""Agora você é um especialista em FAQ, 
+                                      responsável por fornecer respostas precisas e concisas a perguntas frequentes. 
+                                      Você possui um profundo conhecimento sobre o assunto abordado no prompt e consegue sintetizar 
+                                      informações complexas em respostas claras e fáceis de entender. Sua função principal é garantir que as dúvidas dos usuários 
+                                      sejam respondidas de forma eficaz, utilizando linguagem clara e objetiva.""")
 
     # Título da Página
     st.title("Lei de Incentivo ao Esporte - FAQ e Consulta de Projetos")
