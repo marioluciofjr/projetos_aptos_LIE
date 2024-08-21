@@ -256,10 +256,8 @@ Orlando Silva de Jesus Júnior""")
 
             st.markdown(f'{resposta.text}')
         except Exception as e:
-            st.error(f"Erro ao gerar resposta: {str(e)}")
-
-    
+            st.error(f"Erro ao gerar resposta: {str(e)}")    
 
     # Botão de Limpar a Consulta
     if st.button("Limpar consulta"):
-        st.session_state['resposta_faq'] = ""  # Limpar a resposta armazenada
+        st.session_state['resposta_faq'] = ""
