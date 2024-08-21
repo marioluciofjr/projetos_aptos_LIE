@@ -55,28 +55,54 @@ if api_key:
         st.markdown(f"[**Consultar Deliberação**]({link_deliberacao})", unsafe_allow_html=True)
         st.markdown(f"[**Consultar CNPJ**]({link_cnpj})", unsafe_allow_html=True)
 
-    # FAQ do Gemini
+   # Perguntas Frequentes (FAQ)
     st.subheader("Perguntas Frequentes")
-    
-    perguntas_faq = {
-        "O que diz a Lei de Incentivo ao Esporte?": "Explique a Lei 11.438/2006 e mencione a Lei 11.439/2022, que atualiza as deduções de imposto.",
-        "O que significa cada manifestação desportiva?": "Explique as diferenças entre manifestação desportiva educacional, de participação e de rendimento.",
-        "O que são os selos da Lei de Incentivo ao Esporte?": "Fale sobre o Selo LIE e o reconhecimento das entidades.",
-        "Qual é o valor que posso doar para os projetos?": "Explique o simulador da Receita Federal para calcular as doações."
-    }
-    
-    for pergunta, contexto in perguntas_faq.items():
-        if st.button(pergunta):
-            try:
-                # Geração da Resposta usando a API do Gemini
-                response = model.generate_content(prompt=contexto)
-                if response.generations:
-                    resposta_gerada = response.generations[0].text
-                    st.write(resposta_gerada)
-                else:
-                    st.error("Nenhuma resposta gerada. Tente novamente.")
-            except Exception as e:
-                st.error(f"Ocorreu um erro ao gerar a resposta: {str(e)}")
+
+    # Definição das perguntas
+    pergunta1 = "O que diz a Lei de Incentivo ao Esporte?"
+    pergunta2 = "O que significa cada manifestação desportiva?"
+    pergunta3 = "O que são os selos da Lei de Incentivo ao Esporte?"
+    pergunta4 = "Qual é o valor que posso doar para os projetos?"
+
+    # Botão para a primeira pergunta
+    if st.button(pergunta1):
+        try:
+            resposta_gerada = model.generate_content(f"""{pergunta1}. Explique a Lei 11.438/2006, cujo texto completo é possível visualizar neste link: https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2006/Lei/L11438compilado.htm. 
+            É importante ressaltar que as deduções de imposto agora são 2% para pessoa jurídica e 7% para pessoa física, atualização presente na Lei 11.439/2022 que é possível visualizar neste link: https://www.planalto.gov.br/ccivil_03/_Ato2019-2022/2022/Lei/L14439.htm#art1""")
+            st.write(resposta_gerada.generations[0].text)
+        except Exception as e:
+            st.error(f"Erro ao gerar resposta: {str(e)}")
+
+    # Botão para a segunda pergunta
+    if st.button(pergunta2):
+        try:
+            resposta_gerada = model.generate_content(f"""{pergunta2}. Explique as diferenças entre manifestação desportiva educacional, de participação e de rendimento""")
+            st.write(resposta_gerada.generations[0].text)
+        except Exception as e:
+            st.error(f"Erro ao gerar resposta: {str(e)}")
+
+    # Botão para a terceira pergunta
+    if st.button(pergunta3):
+        try:
+            resposta_gerada = model.generate_content(f"""{pergunta3}. Faça um disclaimer sobre o Selo LIE: 
+            “Você sabia que a Lei de Incentivo ao Esporte (LIE) premia proponentes, projetos e patrocinadores ou doadores do esporte brasileiro com selos de qualidade? 
+            Agora, essas instituições podem se diferenciar ainda mais, apresentando seu selo à comunidade, como prova de reconhecimento oficial da LIE. 
+            O EDITAL/MC/GM Nº 2/2021 tornou pública a criação dos selos, por meio da Portaria nº 712, de 16 de dezembro de 2021, destinada ao reconhecimento de entidades proponentes, projetos e patrocinadores/doadores, 
+            relacionados à Lei nº 11.438, de dezembro de 2006 - Lei de Incentivo ao Esporte (LIE) e alterações, que contribuem com o desenvolvimento e fortalecimento do desporto nacional. 
+            A classificação dos selos foi desenvolvida seguindo requisitos criteriosamente planejados pelo Ministério do Esporte, de acordo com as necessidades do espectro esportivo e social do Brasil.” 
+            Indique o seguinte link para obter mais informações: https://www.gov.br/esporte/pt-br/acoes-e-programas/lei-de-incentivo-ao-esporte/selo-lie/""")
+            st.write(resposta_gerada.generations[0].text)
+        except Exception as e:
+            st.error(f"Erro ao gerar resposta: {str(e)}")
+
+    # Botão para a quarta pergunta
+    if st.button(pergunta4):
+        try:
+            resposta_gerada = model.generate_content(f"""{pergunta4}. Explique que existe um simulador da Receita Federal para calcular quanto a pessoa física deve doar de imposto de acordo com a regra percentual estabelecida pela Lei de Incentivo ao Esporte 
+            (abatimento de 7% do imposto devido para pessoas físicas). Indique o link do simulador: https://www27.receita.fazenda.gov.br/simulador-irpf/""")
+            st.write(resposta_gerada.generations[0].text)
+        except Exception as e:
+            st.error(f"Erro ao gerar resposta: {str(e)}")
 
     # Botão de Limpar a Consulta
     if st.button("Limpar consulta"):
