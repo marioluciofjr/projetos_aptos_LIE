@@ -30,6 +30,36 @@ if api_key:
                                       informações complexas em respostas claras e fáceis de entender. Sua função principal é garantir que as dúvidas dos usuários 
                                       sejam respondidas de forma eficaz, utilizando linguagem clara e objetiva.""")
 
+# Estilos CSS para os botões
+st.button("""
+    <style>
+    .botao-vermelho {
+        background-color: #FF4B4B;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        border: none;
+        padding: 0.5em 1em;
+        cursor: pointer;
+    }
+    .botao-verde {
+        background-color: #4CAF50;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        border: none;
+        padding: 0.5em 1em;
+        cursor: pointer;
+    }
+    .botao-vermelho:hover {
+        background-color: #FF0000;
+    }
+    .botao-verde:hover {
+        background-color: #45A049;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
     # Título da Página
     st.title("Lei de Incentivo ao Esporte - FAQ e Consulta de Projetos")
 
@@ -47,7 +77,7 @@ if api_key:
     projeto_selecionado = st.selectbox("Escolha o Projeto", df_filtrado['Projeto'].tolist())
 
     # Exibição dos Botões para Deliberação e Consulta de CNPJ
-    if st.button("Obter deliberação e consulta CNPJ"):
+    if st.button(f'<button class="botao-verde">"Obter deliberação e consulta CNPJ"</button>):
         processo = df_filtrado[df_filtrado['Projeto'] == projeto_selecionado]['Processo'].values[0]
         cnpj = df_filtrado[df_filtrado['Projeto'] == projeto_selecionado]['CNPJ'].values[0]
         
@@ -126,5 +156,5 @@ if api_key:
     
 
     # Botão de Limpar a Consulta
-    if st.button("Limpar consulta"):
+    if st.button(f'<button class="botao-vermelho">"Limpar consulta"</button>):
         st.session_state['resposta_faq'] = ""  # Limpar a resposta armazenada
