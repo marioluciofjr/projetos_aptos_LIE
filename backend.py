@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 import streamlit as st
-from gemini import genai
+import google.generativeai as genai
 
 # Configuração da API Key
 api_key = st.text_input("""Insira sua API Key e aperte *ENTER* \n 
