@@ -78,7 +78,7 @@ if api_key:
     projeto_selecionado = st.selectbox("Escolha o Projeto", df_filtrado['Projeto'].tolist())
 
     # Exibição dos Botões para Deliberação e Consulta de CNPJ
-    if st.button(f'<button class=botao-verde>"Obter deliberação e consulta CNPJ"</button>):
+    if st.button(<button class="botao-verde">"Obter deliberação e consulta CNPJ"</button>):
         processo = df_filtrado[df_filtrado['Projeto'] == projeto_selecionado]['Processo'].values[0]
         cnpj = df_filtrado[df_filtrado['Projeto'] == projeto_selecionado]['CNPJ'].values[0]
         
@@ -157,5 +157,5 @@ if api_key:
     
 
     # Botão de Limpar a Consulta
-    if st.button(f'<button class=botao-vermelho>"Limpar consulta"</button>):
+    if st.button(<button class="botao-vermelho">"Limpar consulta"</button>):
         st.session_state['resposta_faq'] = ""  # Limpar a resposta armazenada
