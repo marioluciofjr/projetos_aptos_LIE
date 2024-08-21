@@ -30,7 +30,45 @@ if api_key:
                                       informações complexas em respostas claras e fáceis de entender. Sua função principal é garantir que as dúvidas dos usuários 
                                       sejam respondidas de forma eficaz, utilizando linguagem clara e objetiva.""")
 
+    st.markdown("""
+    <style>
+    .main {
+        max-width: 800px;
+        margin: auto;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
+    st.markdown("""
+    <style>
+    .stButton>button {
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 12px;
+    }
+    .stButton>button:hover {
+        background-color: #45a049;
+        transform: scale(1.05);
+        transition: 0.3s;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+    st.success("Operação concluída com sucesso!")
+st.markdown("""
+    <style>
+    .success {
+        color: green;
+        animation: fadein 2s;
+    }
+    @keyframes fadein {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+    
     # Título da Página
     st.title("Lei de Incentivo ao Esporte - Projetos Aptos")
 
