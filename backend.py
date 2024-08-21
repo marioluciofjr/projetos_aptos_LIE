@@ -1,4 +1,3 @@
-import os
 import pandas as pd
 import streamlit as st
 import google.generativeai as genai
