@@ -70,8 +70,142 @@ if api_key:
     # Botão para a primeira pergunta
     if st.button(pergunta1):
         try:
-            resposta = model.generate_content(f"""{pergunta1}. Explique a Lei 11.438/2006, cujo texto completo é possível visualizar neste link: https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2006/Lei/L11438compilado.htm. 
-            É importante ressaltar que as deduções de imposto agora são 2% para pessoa jurídica e 7% para pessoa física, atualização presente na Lei 11.439/2022 que é possível visualizar neste link: https://www.planalto.gov.br/ccivil_03/_Ato2019-2022/2022/Lei/L14439.htm#art1""")
+            resposta = model.generate_content(f"""{pergunta1}. Explique a Lei 11.438/2006: LEI Nº 11.438, DE 29 DE DEZEMBRO DE 2006.
+
+Dispõe sobre incentivos e benefícios para fomentar as atividades de caráter desportivo e dá outras providências.
+
+O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:
+
+CAPÍTULO I
+
+DOS INCENTIVOS AO DESPORTO
+
+Art. 1º A partir do ano-calendário de 2007, até o ano-calendário de 2027, inclusive, poderão ser deduzidos do imposto de renda devido, apurado na Declaração de Ajuste Anual pelas pessoas físicas ou em cada período de apuração, trimestral ou anual, pela pessoa jurídica tributada com base no lucro real, os valores despendidos a título de patrocínio ou doação no apoio direto a projetos desportivos e paradesportivos previamente aprovados pelo Ministério da Cidadania.      (Redação dada pela Lei nº 11.439, de 2022)    Produção de efeitos
+
+§ 1º As deduções de que trata o caput deste artigo ficam limitadas:
+
+I - relativamente à pessoa jurídica, a 2% (dois por cento) do imposto devido, observado o disposto no § 4º do art. 3º da Lei nº 9.249, de 26 de dezembro de 1995, em cada período de apuração;        (Redação dada pela Lei nº 11.439, de 2022)    Produção de efeitos
+
+II - relativamente à pessoa física, a 7% (sete por cento) do imposto devido na Declaração de Ajuste Anual, conjuntamente com as deduções a que se referem os incisos I, II e III do art. 12 da Lei nº 9.250, de 26 de dezembro de 1995.           (Redação dada pela Lei nº 11.439, de 2022)    Produção de efeitos
+
+§ 2º As pessoas jurídicas não poderão deduzir os valores de que trata o caput deste artigo para fins de determinação do lucro real e da base de cálculo da Contribuição Social sobre o Lucro Líquido - CSLL.
+
+§ 3º Os benefícios de que trata este artigo não excluem ou reduzem outros benefícios fiscais e deduções em vigor.
+
+§ 4º Não são dedutíveis os valores destinados a patrocínio ou doação em favor de projetos que beneficiem, direta ou indiretamente, pessoa física ou jurídica vinculada ao doador ou patrocinador.
+
+§ 5º Consideram-se vinculados ao patrocinador ou ao doador:
+
+I - a pessoa jurídica da qual o patrocinador ou o doador seja titular, administrador, gerente, acionista ou sócio, na data da operação ou nos 12 (doze) meses anteriores;
+
+II - o cônjuge, os parentes até o terceiro grau, inclusive os afins, e os dependentes do patrocinador, do doador ou dos titulares, administradores, acionistas ou sócios de pessoa jurídica vinculada ao patrocinador ou ao doador, nos termos do inciso I deste parágrafo;
+
+III - a pessoa jurídica coligada, controladora ou controlada, ou que tenha como titulares, administradores acionistas ou sócios alguma das pessoas a que se refere o inciso II deste parágrafo.
+
+§ 6º O limite previsto no inciso I do § 1º deste artigo será de 4% (quatro por cento) quando o projeto desportivo ou paradesportivo for destinado a promover a inclusão social por meio do esporte, preferencialmente em comunidades em situação de vulnerabilidade social, nos termos do § 1º do art. 2º desta Lei, conjuntamente com as deduções a que se referem o art. 26 da Lei nº 8.313, de 23 de dezembro de 1991, e o art. 1º da Lei nº 8.685, de 20 de julho de 1993.          (Incluído pela Lei nº 11.439, de 2022)    Produção de efeitos
+
+§ 7º (VETADO).         (Incluído pela Lei nº 11.439, de 2022)    Produção de efeitos
+
+Art. 2º Os projetos desportivos e paradesportivos, em cujo favor serão captados e direcionados os recursos oriundos dos incentivos previstos nesta Lei, atenderão a pelo menos uma das seguintes manifestações, nos termos e condições definidas em regulamento: (Redação dada pela Lei nº 11.472, de 2007)
+
+I - desporto educacional;
+
+II - desporto de participação;
+
+III - desporto de rendimento.
+
+§ 1º Poderão receber os recursos oriundos dos incentivos previstos nesta Lei os projetos desportivos destinados a promover a inclusão social por meio do esporte, preferencialmente em comunidades de vulnerabilidade social.
+
+§ 2º É vedada a utilização dos recursos oriundos dos incentivos previstos nesta Lei para o pagamento de remuneração de atletas profissionais, nos termos da Lei nº 9.615, de 24 de março de 1998, em qualquer modalidade desportiva.
+
+§ 3º O proponente não poderá captar, para cada projeto, entre patrocínio e doação, valor superior ao aprovado pelo Ministério do Esporte, na forma do art. 4º desta Lei.
+
+Art. 3º Para fins do disposto nesta Lei, considera-se:
+
+I - patrocínio:
+
+a) a transferência gratuita, em caráter definitivo, ao proponente de que trata o inciso V do caput deste artigo de numerário para a realização de projetos desportivos e paradesportivos, com finalidade promocional e institucional de publicidade; (Redação dada pela Lei nº 11.472, de 2007)
+
+b) a cobertura de gastos ou a utilização de bens, móveis ou imóveis, do patrocinador, sem transferência de domínio, para a realização de projetos desportivos e paradesportivos pelo proponente de que trata o inciso V do caput deste artigo; (Redação dada pela Lei nº 11.472, de 2007)
+
+II - doação:
+
+a) a transferência gratuita, em caráter definitivo, ao proponente de que trata o inciso V do caput deste artigo de numerário, bens ou serviços para a realização de projetos desportivos e paradesportivos, desde que não empregados em publicidade, ainda que para divulgação das atividades objeto do respectivo projeto; (Redação dada pela Lei nº 11.472, de 2007)
+
+b) a distribuição gratuita de ingressos para eventos de caráter desportivo e paradesportivo por pessoa jurídica a empregados e seus dependentes legais ou a integrantes de comunidades de vulnerabilidade social; (Redação dada pela Lei nº 11.472, de 2007)
+
+III - patrocinador: a pessoa física ou jurídica, contribuinte do imposto de renda, que apóie projetos aprovados pelo Ministério do Esporte nos termos do inciso I do caput deste artigo;
+
+IV - doador: a pessoa física ou jurídica, contribuinte do imposto de renda, que apóie projetos aprovados pelo Ministério do Esporte nos termos do inciso II do caput deste artigo;
+
+V - proponente: a pessoa física ou a pessoa jurídica de direito público, ou de direito privado com fins não econômicos, de natureza esportiva, bem como as instituições de ensino fundamental, médio e superior, que tenham projeto aprovado nos termos desta Lei.    (Redação dada pela Lei nº 14.933, de 2024)
+
+Art. 4º A avaliação e a aprovação do enquadramento dos projetos apresentados na forma prevista no art. 5º desta Lei cabem a uma Comissão Técnica vinculada ao Ministério do Esporte, garantindo-se a participação de representantes governamentais, designados pelo Ministro do Esporte, e representantes do setor desportivo, indicados pelo Conselho Nacional de Esporte.
+
+Parágrafo único. A composição, a organização e o funcionamento da comissão serão estipulados e definidos em regulamento.
+
+Art. 5º Os projetos desportivos e paradesportivos de que trata o art. 1º desta Lei serão submetidos ao Ministério do Esporte, acompanhados da documentação estabelecida em regulamento e de orçamento analítico.
+
+§ 1º A aprovação dos projetos de que trata o caput deste artigo somente terá eficácia após a publicação de ato oficial contendo o título do projeto aprovado, a instituição responsável, o valor autorizado para captação e o prazo de validade da autorização.
+
+§ 2º Os projetos aprovados e executados com recursos desta Lei serão acompanhados e avaliados pelo Ministério do Esporte.
+
+CAPÍTULO II
+
+DISPOSIÇÕES GERAIS
+
+Art. 6º A divulgação das atividades, bens ou serviços resultantes dos projetos desportivos e paradesportivos financiados nos termos desta Lei mencionará o apoio institucional, com inserção da Bandeira Nacional, nos termos da Lei nº 5.700, de 1º de setembro de 1971.
+
+Art. 7º A prestação de contas dos projetos beneficiados pelos incentivos previstos nesta Lei fica a cargo do proponente e será apresentada ao Ministério do Esporte, na forma estabelecida pelo regulamento.
+
+Art. 8º O Ministério do Esporte informará à Secretaria da Receita Federal do Brasil - RFB os valores correspondentes a doação ou patrocínio destinados ao apoio direto a projetos desportivos e paradesportivos, no ano-calendário anterior. (Redação dada pela Lei nº 13.043, de 2014)
+
+Parágrafo único. A RFB estabelecerá, em ato normativo próprio, a forma, o prazo e as condições para o cumprimento da obrigação acessória a que se refere o caput deste artigo. (Redação dada pela Lei nº 13.043, de 2014)
+
+Art. 9º Compete à Secretaria da Receita Federal, no âmbito de suas atribuições, a fiscalização dos incentivos previstos nesta Lei.
+
+Art. 10. Constituem infração aos dispositivos desta Lei:
+
+I - o recebimento pelo patrocinador ou doador de qualquer vantagem financeira ou material em decorrência do patrocínio ou da doação que com base nela efetuar;
+
+II - agir o patrocinador, o doador ou o proponente com dolo, fraude ou simulação para utilizar incentivo nela previsto;
+
+III - desviar para finalidade diversa da fixada nos respectivos projetos dos recursos, bens, valores ou benefícios com base nela obtidos;
+
+IV - adiar, antecipar ou cancelar, sem justa causa, atividade desportiva beneficiada pelos incentivos nela previstos;
+
+V - o descumprimento de qualquer das suas disposições ou das estabelecidas em sua regulamentação.
+
+Art. 11. As infrações aos dispositivos desta Lei, sem prejuízo das demais sanções cabíveis, sujeitarão:
+
+I - o patrocinador ou o doador ao pagamento do imposto não recolhido, além das penalidades e demais acréscimos previstos na legislação;
+
+II - o infrator ao pagamento de multa correspondente a 2 (duas) vezes o valor da vantagem auferida indevidamente, sem prejuízo do disposto no inciso I do caput deste artigo.
+
+Parágrafo único. O proponente é solidariamente responsável por inadimplência ou irregularidade verificada quanto ao disposto no inciso I do caput deste artigo.
+
+Art. 12. Os recursos provenientes de doações ou patrocínios efetuados nos termos do art. 1º desta Lei serão depositados e movimentados em conta bancária específica, no Banco do Brasil S.A. ou na Caixa Econômica Federal, que tenha como titular o proponente do projeto aprovado pelo Ministério do Esporte.
+
+Parágrafo único. Não são dedutíveis, nos termos desta Lei, os valores em relação aos quais não se observe o disposto neste artigo.
+
+Art. 13. Todos os recursos utilizados no apoio direto a projetos desportivos e paradesportivos previstos nesta Lei deverão ser disponibilizados na rede mundial de computadores, de acordo com a Lei nº 9.755, de 16 de dezembro de 1998.
+
+Parágrafo único. Os recursos a que se refere o caput deste artigo ainda deverão ser disponibilizados, mensalmente, no sítio do Ministério do Esporte, constando a sua origem e destinação.
+
+Art. 13-A. O valor máximo das deduções de que trata o art. 1º desta Lei será fixado anualmente em ato do Poder Executivo, com base em um percentual da renda tributável das pessoas físicas e do imposto sobre a renda devido por pessoas jurídicas tributadas com base no lucro real. (Incluído pela Lei nº 11.472, de 2007)
+
+Parágrafo único. Do valor máximo a que se refere o caput deste artigo o Poder Executivo fixará os limites a serem aplicados para cada uma das manifestações de que trata o art. 2º desta Lei. (Incluído pela Lei nº 11.472, de 2007)
+
+Art. 13-B. A divulgação das atividades, bens ou serviços resultantes de projetos desportivos e paradesportivos, culturais e de produção audiovisual e artística financiados com recursos públicos mencionará o apoio institucional com a inserção da Bandeira Nacional, nos termos da Lei nº 5.700, de 1º de setembro de 1971. (Incluído pela Lei nº 11.472, de 2007)
+
+Art. 13-C. Sem prejuízo do disposto no art. 166 da Constituição Federal, os Ministérios da Cultura e do Esporte encaminharão ao Congresso Nacional relatórios detalhados acerca da destinação e regular aplicação dos recursos provenientes das deduções e benefícios fiscais previstos nas Leis nºs 8.313, de 23 de dezembro de 1991, e 11.438, de 29 de dezembro de 2006, para fins de acompanhamento e fiscalização orçamentária das operações realizadas. (Incluído pela Lei nº 11.472, de 2007)
+
+Art. 14. Esta Lei entra em vigor na data de sua publicação.
+
+Brasília, 29 de dezembro de 2006; 185º da Independência e 118º da República.
+
+LUIZ INÁCIO LULA DA SILVA
+Orlando Silva de Jesus Júnior""")
             def to_markdown(text):
               text = text.replace('•', '  *')
               return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
