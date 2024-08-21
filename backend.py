@@ -1,18 +1,23 @@
-import pandas as pd
 import streamlit as st
 import google.generativeai as genai
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-import webbrowser
+import pandas as pd
+from urllib.parse import quote
 
-# Configuração da API Key do Gemini
+# Load data from Google Sheets
+SHEET_URL = "https://docs.google.com/spreadsheets/d/1N2QmLKcZ1QBLm3gbWoqrARCS8pklGUkMP4LJHCJP4Ek/edit?gid=0#gid=0"
+df = pd.read_csv(SHEET_URL)
+
+# Streamlit app
+st.set_page_config(layout="wide")
+st.title("Lei de Incentivo ao Esporte")
+
+# Gemini API setup
 api_key = st.text_input("""Insira sua API Key e aperte *ENTER* \n 
 Saiba como gerar sua API Key ---> https://github.com/marioluciofjr/iabout#como-gerar-sua-api-key""", type="password")
 
 if api_key:
-    import genai
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel(model_name='gemini-1.5-flash-latest',
+    model = genai.GenerativeModel(model_name='gemini-1.5-flash',
                                   generation_config={
                                       "candidate_count": 1,
                                       "temperature": 0.75,
@@ -27,92 +32,75 @@ if api_key:
                                   },
                                   system_instruction="Agora você é um especialista em FAQ, responsável por fornecer respostas precisas e concisas a perguntas frequentes. Você possui um profundo conhecimento sobre o assunto abordado no prompt e consegue sintetizar informações complexas em respostas claras e fáceis de entender. Sua função principal é garantir que as dúvidas dos usuários sejam respondidas de forma eficaz, utilizando linguagem clara e objetiva.")
 
-# Conexão com a planilha do Google Sheets
-scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-creds = ServiceAccountCredentials.from_json_keyfile_name('caminho/para/seu/arquivo/de/credenciais.json', scope)
-client = gspread.authorize(creds)
-sheet = client.open("PROJETOS_APTOS").sheet1
+# Filter data by sport manifestation
+sport_manifestation = st.selectbox("Selecione a manifestação desportiva", df["Manifestação Desportiva"].unique())
+filtered_df = df[df["Manifestação Desportiva"] == sport_manifestation]
 
-# Obter os dados da planilha
-data = sheet.get_all_values()
-df = pd.DataFrame(data[1:], columns=data[0])
+# Select a project
+project = st.selectbox("Selecione um projeto", filtered_df["Projeto"])
+selected_row = filtered_df[filtered_df["Projeto"] == project].iloc[0]
 
-# Filtrar os projetos por manifestação desportiva
-st.title("Projetos Aptos à Lei de Incentivo ao Esporte")
-manifestacao = st.selectbox("Filtrar por manifestação desportiva:", df["Manifestação Desportiva"].unique())
-filtered_df = df[df["Manifestação Desportiva"] == manifestacao]
+# Display project details and buttons
+st.write(f"Proponente: {selected_row['Proponente']}")
+st.write(f"Processo: {selected_row['Processo']}")
+st.write(f"CNPJ: {selected_row['CNPJ']}")
+st.write(f"Manifestação Desportiva: {selected_row['Manifestação Desportiva']}")
 
-# Permitir que o usuário selecione um projeto
-projeto = st.selectbox("Selecione um projeto:", filtered_df["Projeto"])
-projeto_row = filtered_df[filtered_df["Projeto"] == projeto].iloc[0]
+# Create buttons
+col1, col2 = st.columns(2)
+with col1:
+    st.button("Consultar deliberação",
+              f"https://www.in.gov.br/consulta/-/buscar/dou?q=%22{quote(selected_row['Processo'])}%22&s=todos&exactDate=all&sortType=0&delta=20&orgPrin=Minist%C3%A9rio+do+Esporte&orgSub=Secretaria+Executiva&artType=Delibera%C3%A7%C3%A3o",
+              use_container_width=True)
+with col2:
+    st.button("Consultar CNPJ",
+              f"https://casadosdados.com.br/solucao/cnpj?q={selected_row['CNPJ']}",
+              use_container_width=True)
 
-# Criar os botões de consulta
-st.markdown(f"<div style='background-color: #230023; color: #f2f2f2; font-family: Quicksand;'>", unsafe_allow_html=True)
-if st.button("Consultar deliberação"):
-    deliberacao_link = f"https://www.in.gov.br/consulta/-/buscar/dou?q=%22{projeto_row['Processo']}%22&s=todos&exactDate=all&sortType=0&delta=20&orgPrin=Minist%C3%A9rio+do+Esporte&orgSub=Secretaria+Executiva&artType=Delibera%C3%A7%C3%A3o"
-    webbrowser.open(deliberacao_link)
+# FAQ section
+st.write("### FAQ do Gemini")
 
-if st.button("Consultar CNPJ"):
-    cnpj_link = f"https://casadosdados.com.br/solucao/cnpj?q={projeto_row['CNPJ']}"
-    webbrowser.open(cnpj_link)
-st.markdown("</div>", unsafe_allow_html=True)
+# What is the Sports Incentive Law?
+faq1 = st.button("O que diz a Lei de Incentivo ao Esporte?")
+if faq1:
+    response = model.generate_text(
+        "A Lei de Incentivo ao Esporte (Lei 11.438/2006) permite que pessoas físicas e jurídicas destinem parte do imposto de renda devido a projetos esportivos, com deduções de até 7% para pessoas físicas e 2% para pessoas jurídicas. Essa lei visa incentivar o desenvolvimento do esporte no Brasil, tanto nas áreas de participação, educacional e de rendimento. O texto completo da lei pode ser encontrado neste link: https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2006/Lei/L11438compilado.htm. Uma atualização recente (Lei 11.439/2022) alterou os percentuais de dedução, que agora são de 7% para pessoas físicas e 2% para pessoas jurídicas. Você pode consultar essa atualização neste link: https://www.planalto.gov.br/ccivil_03/_Ato2019-2022/2022/Lei/L14439.htm#art1")
+    st.write(response)
 
-# Criar a FAQ do Gemini
-st.markdown("## FAQ do Gemini")
+# What are the different sport manifestations?
+faq2 = st.button("O que significa cada manifestação desportiva?")
+if faq2:
+    response = model.generate_text(
+        "A Lei de Incentivo ao Esporte reconhece três principais manifestações desportivas:\n\n1. Manifestação desportiva educacional: Relacionada a projetos que visam o desenvolvimento de atividades esportivas como parte do processo educacional e de formação do indivíduo.\n\n2. Manifestação desportiva de participação: Relacionada a projetos que visam a promoção da prática esportiva com finalidade de lazer, recreação, inclusão social e promoção da saúde.\n\n3. Manifestação desportiva de rendimento: Relacionada a projetos que visam o desenvolvimento de atletas, seleções e equipes esportivas, com o objetivo de obter resultados em competições."
+    )
+    st.write(response)
 
-def faq_lei_incentivo_esporte():
-    return """
-A Lei de Incentivo ao Esporte (Lei 11.438/2006) permite que pessoas físicas e jurídicas apoiem projetos esportivos por meio de doações ou patrocínios, obtendo incentivos fiscais. As deduções são de 7% do imposto devido para pessoas físicas e 2% para pessoas jurídicas. 
+# What are the LIE seals?
+faq3 = st.button("O que são os selos da Lei de Incentivo ao Esporte?")
+if faq3:
+    response = model.generate_text(
+        "Você sabia que a Lei de Incentivo ao Esporte (LIE) premia proponentes, projetos e patrocinadores ou doadores do esporte brasileiro com selos de qualidade? Agora, essas instituições podem se diferenciar ainda mais, apresentando seu selo à comunidade, como prova de reconhecimento oficial da LIE. O EDITAL/MC/GM Nº 2/2021 tornou pública a criação dos selos, por meio da Portaria nº 712, de 16 de dezembro de 2021, destinada ao reconhecimento de entidades proponentes, projetos e patrocinadores/doadores, relacionados à Lei nº 11.438, de dezembro de 2006 - Lei de Incentivo ao Esporte (LIE) e alterações, que contribuem com o desenvolvimento e fortalecimento do desporto nacional. A classificação dos selos foi desenvolvida seguindo requisitos criteriosamente planejados pelo Ministério do Esporte, de acordo com as necessidades do espectro esportivo e social do Brasil. Você pode obter mais informações sobre os selos neste link: https://www.gov.br/esporte/pt-br/acoes-e-programas/lei-de-incentivo-ao-esporte/selo-lie/")
+    st.write(response)
 
-A lei abrange diferentes manifestações esportivas, como esporte educacional, de participação e de rendimento. Para saber mais, acesse:
-https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2006/Lei/L11438compilado.htm
-https://www.planalto.gov.br/ccivil_03/_Ato2019-2022/2022/Lei/L14439.htm#art1
-"""
+# How much can I donate to the projects?
+faq4 = st.button("Qual é o valor que posso doar para os projetos?")
+if faq4:
+    response = model.generate_text(
+        "De acordo com a Lei de Incentivo ao Esporte, as pessoas físicas podem deduzir até 7% do imposto de renda devido para realização de doações a projetos esportivos. Já as pessoas jurídicas podem deduzir até 2% do imposto devido. Para calcular o valor que você pode doar, existe um simulador disponibilizado pela Receita Federal, que você pode acessar neste link: https://www27.receita.fazenda.gov.br/simulador-irpf/")
+    st.write(response)
 
-def faq_manifestacoes_desportivas():
-    return """
-As manifestações desportivas contempladas pela Lei de Incentivo ao Esporte são:
+# Streamlit UI
+st.markdown("""
+<style>
+  .stButton button {
+    background-color: #230023;
+    color: #f2f2f2;
+    font-family: 'Quicksand', sans-serif;
+  }
+  .stButton button:hover {
+    background-color: #3e003e;
+  }
+</style>
+""", unsafe_allow_html=True)
 
-Esporte Educacional: Praticado nos sistemas de ensino e em formas assistemáticas de educação, evitando a seletividade e a hipercompetitividade de seus praticantes, com a finalidade de alcançar o desenvolvimento integral do indivíduo e a sua formação para o exercício da cidadania e a prática do lazer.
-
-Esporte de Participação: Praticado de modo voluntário, caracterizado pela realização de atividades físicas, recreativas e esportivas, com a finalidade de contribuir para a integração dos praticantes na plenitude da vida social, na promoção da saúde e da educação, e na preservação do meio ambiente.
-
-Esporte de Rendimento: Praticado segundo normas e regras nacionais e internacionais, com a finalidade de obter resultados e integrar pessoas e comunidades do País e estas com as de outras nações.
-"""
-
-def faq_selos_lie():
-    return """
-Você sabia que a Lei de Incentivo ao Esporte (LIE) premia proponentes, projetos e patrocinadores ou doadores do esporte brasileiro com selos de qualidade? Agora, essas instituições podem se diferenciar ainda mais, apresentando seu selo à comunidade, como prova de reconhecimento oficial da LIE.
-
-O EDITAL/MC/GM Nº 2/2021 tornou pública a criação dos selos, por meio da Portaria nº 712, de 16 de dezembro de 2021, destinada ao reconhecimento de entidades proponentes, projetos e patrocinadores/doadores, relacionados à Lei nº 11.438, de dezembro de 2006 - Lei de Incentivo ao Esporte (LIE) e alterações, que contribuem com o desenvolvimento e fortalecimento do desporto nacional.
-
-A classificação dos selos foi desenvolvida seguindo requisitos criteriosamente planejados pelo Ministério do Esporte, de acordo com as necessidades do espectro esportivo e social do Brasil.
-
-Para obter mais informações, acesse: https://www.gov.br/esporte/pt-br/acoes-e-programas/lei-de-incentivo-ao-esporte/selo-lie/
-"""
-
-def faq_valor_doacao():
-    return """
-De acordo com a Lei de Incentivo ao Esporte, pessoas físicas podem deduzir até 7% do imposto de renda devido, e pessoas jurídicas podem deduzir até 2% do imposto devido.
-
-Para calcular o valor que você pode doar, você pode utilizar o simulador da Receita Federal:
-https://www27.receita.fazenda.gov.br/simulador-irpf/
-"""
-
-st.markdown(f"<div style='background-color: #230023; color: #f2f2f2; font-family: Quicksand;'>", unsafe_allow_html=True)
-if st.button("O que diz a Lei de Incentivo ao Esporte?"):
-    st.markdown(faq_lei_incentivo_esporte(), unsafe_allow_html=True)
-
-if st.button("O que significa cada manifestação desportiva?"):
-    st.markdown(faq_manifestacoes_desportivas(), unsafe_allow_html=True)
-
-if st.button("O que são os selos da Lei de Incentivo ao Esporte?"):
-    st.markdown(faq_selos_lie(), unsafe_allow_html=True)
-
-if st.button("Qual é o valor que posso doar para os projetos?"):
-    st.markdown(faq_valor_doacao(), unsafe_allow_html=True)
-
-if st.button("Limpar consulta"):
-    st.experimental_rerun()
-
-st.markdown("</div>", unsafe_allow_html=True)
+st.button("Limpar consulta", on_click=st.legacy_caching.clear_cache, use_container_width=True)
