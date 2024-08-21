@@ -15,7 +15,7 @@ if api_key:
                                       generation_config={
                                           "candidate_count": 1,
                                           "temperature": 0.75,
-                                          "top_k": 40,
+                                          "top_k": 60,
                                           "top_p": 0.95
                                       },
                                       safety_settings={
@@ -32,37 +32,7 @@ if api_key:
 
 
     # Título da Página
-    st.title("Lei de Incentivo ao Esporte - FAQ e Consulta de Projetos")
-
-    # Estilos CSS para os botões
-    st.button("""
-        <style>
-        .botao-vermelho {
-            background-color: #FF4B4B;
-            color: white;
-            font-weight: bold;
-            border-radius: 5px;
-            border: none;
-            padding: 0.5em 1em;
-            cursor: pointer;
-        }
-        .botao-verde {
-            background-color: #4CAF50;
-            color: white;
-            font-weight: bold;
-            border-radius: 5px;
-            border: none;
-            padding: 0.5em 1em;
-            cursor: pointer;
-        }
-        .botao-vermelho:hover {
-            background-color: #FF0000;
-        }
-        .botao-verde:hover {
-            background-color: #45A049;
-        }
-        </style>
-    """, unsafe_allow_html=True)
+    st.title("Lei de Incentivo ao Esporte - Projetos Aptos")
 
     # Layout para Manifestação Desportiva
     st.subheader("Selecione a Manifestação Desportiva:")
@@ -78,7 +48,7 @@ if api_key:
     projeto_selecionado = st.selectbox("Escolha o Projeto", df_filtrado['Projeto'].tolist())
 
     # Exibição dos Botões para Deliberação e Consulta de CNPJ
-    if st.button(<button class="botao-verde">"Obter deliberação e consulta CNPJ"</button>):
+    if st.button("Obter deliberação e consulta CNPJ"):
         processo = df_filtrado[df_filtrado['Projeto'] == projeto_selecionado]['Processo'].values[0]
         cnpj = df_filtrado[df_filtrado['Projeto'] == projeto_selecionado]['CNPJ'].values[0]
         
@@ -157,5 +127,5 @@ if api_key:
     
 
     # Botão de Limpar a Consulta
-    if st.button(<button class="botao-vermelho">"Limpar consulta"</button>):
+    if st.button("Limpar consulta"):
         st.session_state['resposta_faq'] = ""  # Limpar a resposta armazenada
