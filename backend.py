@@ -69,7 +69,7 @@ if api_key:
         if st.button(pergunta):
             try:
                 # Geração da Resposta usando a API do Gemini
-                response = model.generate(prompt=contexto)
+                response = model.generate_content(prompt=contexto)
                 if response.generations:
                     resposta_gerada = response.generations[0].text
                     st.write(resposta_gerada)
