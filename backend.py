@@ -37,7 +37,7 @@ if api_key:
         margin: auto;
     }
     </style>
-""", unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
     st.markdown("""
     <style>
@@ -52,10 +52,10 @@ if api_key:
         transition: 0.3s;
     }
     </style>
-""", unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
-    st.success("Operação concluída com sucesso!")
-st.markdown("""
+        st.success("Operação concluída com sucesso!")
+    st.markdown("""
     <style>
     .success {
         color: green;
@@ -66,7 +66,7 @@ st.markdown("""
         to { opacity: 1; }
     }
     </style>
-""", unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
     
     # Título da Página
