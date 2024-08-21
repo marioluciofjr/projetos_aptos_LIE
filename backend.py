@@ -30,38 +30,39 @@ if api_key:
                                       informações complexas em respostas claras e fáceis de entender. Sua função principal é garantir que as dúvidas dos usuários 
                                       sejam respondidas de forma eficaz, utilizando linguagem clara e objetiva.""")
 
-# Estilos CSS para os botões
-st.button("""
-    <style>
-    .botao-vermelho {
-        background-color: #FF4B4B;
-        color: white;
-        font-weight: bold;
-        border-radius: 5px;
-        border: none;
-        padding: 0.5em 1em;
-        cursor: pointer;
-    }
-    .botao-verde {
-        background-color: #4CAF50;
-        color: white;
-        font-weight: bold;
-        border-radius: 5px;
-        border: none;
-        padding: 0.5em 1em;
-        cursor: pointer;
-    }
-    .botao-vermelho:hover {
-        background-color: #FF0000;
-    }
-    .botao-verde:hover {
-        background-color: #45A049;
-    }
-    </style>
-""", unsafe_allow_html=True)
 
     # Título da Página
     st.title("Lei de Incentivo ao Esporte - FAQ e Consulta de Projetos")
+
+    # Estilos CSS para os botões
+    st.button("""
+        <style>
+        .botao-vermelho {
+            background-color: #FF4B4B;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            border: none;
+            padding: 0.5em 1em;
+            cursor: pointer;
+        }
+        .botao-verde {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            border: none;
+            padding: 0.5em 1em;
+            cursor: pointer;
+        }
+        .botao-vermelho:hover {
+            background-color: #FF0000;
+        }
+        .botao-verde:hover {
+            background-color: #45A049;
+        }
+        </style>
+    """, unsafe_allow_html=True)
 
     # Layout para Manifestação Desportiva
     st.subheader("Selecione a Manifestação Desportiva:")
