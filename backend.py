@@ -1,6 +1,8 @@
 import streamlit as st
 import google.generativeai as genai
 import pandas as pd
+import textwrap
+from IPython.display import Markdown
 
 # Configuração da API Key
 api_key = st.text_input("""Insira sua API Key e aperte *ENTER* \n 
@@ -67,42 +69,61 @@ if api_key:
     # Botão para a primeira pergunta
     if st.button(pergunta1):
         try:
-            resposta_gerada = model.generate_content(f"""{pergunta1}. Explique a Lei 11.438/2006, cujo texto completo é possível visualizar neste link: https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2006/Lei/L11438compilado.htm. 
+            resposta = model.generate_content(f"""{pergunta1}. Explique a Lei 11.438/2006, cujo texto completo é possível visualizar neste link: https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2006/Lei/L11438compilado.htm. 
             É importante ressaltar que as deduções de imposto agora são 2% para pessoa jurídica e 7% para pessoa física, atualização presente na Lei 11.439/2022 que é possível visualizar neste link: https://www.planalto.gov.br/ccivil_03/_Ato2019-2022/2022/Lei/L14439.htm#art1""")
-            st.write(resposta_gerada)
+            def to_markdown(text):
+              text = text.replace('•', '  *')
+              return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
+
+            st.markdown(f'{resposta.text}')
+
         except Exception as e:
             st.error(f"Erro ao gerar resposta: {str(e)}")
 
     # Botão para a segunda pergunta
     if st.button(pergunta2):
         try:
-            resposta_gerada = model.generate_content(f"""{pergunta2}. Explique as diferenças entre manifestação desportiva educacional, de participação e de rendimento""")
-            st.write(resposta_gerada)
+            resposta = model.generate_content(f"""{pergunta2}. Explique as diferenças entre manifestação desportiva educacional, de participação e de rendimento""")
+            def to_markdown(text):
+              text = text.replace('•', '  *')
+              return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
+
+            st.markdown(f'{resposta.text}')
         except Exception as e:
             st.error(f"Erro ao gerar resposta: {str(e)}")
 
     # Botão para a terceira pergunta
     if st.button(pergunta3):
         try:
-            resposta_gerada = model.generate_content(f"""{pergunta3}. Faça um disclaimer sobre o Selo LIE: 
+            resposta = model.generate_content(f"""{pergunta3}. Faça um disclaimer sobre o Selo LIE: 
             “Você sabia que a Lei de Incentivo ao Esporte (LIE) premia proponentes, projetos e patrocinadores ou doadores do esporte brasileiro com selos de qualidade? 
             Agora, essas instituições podem se diferenciar ainda mais, apresentando seu selo à comunidade, como prova de reconhecimento oficial da LIE. 
             O EDITAL/MC/GM Nº 2/2021 tornou pública a criação dos selos, por meio da Portaria nº 712, de 16 de dezembro de 2021, destinada ao reconhecimento de entidades proponentes, projetos e patrocinadores/doadores, 
             relacionados à Lei nº 11.438, de dezembro de 2006 - Lei de Incentivo ao Esporte (LIE) e alterações, que contribuem com o desenvolvimento e fortalecimento do desporto nacional. 
             A classificação dos selos foi desenvolvida seguindo requisitos criteriosamente planejados pelo Ministério do Esporte, de acordo com as necessidades do espectro esportivo e social do Brasil.” 
             Indique o seguinte link para obter mais informações: https://www.gov.br/esporte/pt-br/acoes-e-programas/lei-de-incentivo-ao-esporte/selo-lie/""")
-            st.write(resposta_gerada)
+            def to_markdown(text):
+              text = text.replace('•', '  *')
+              return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
+
+            st.markdown(f'{resposta.text}')
         except Exception as e:
             st.error(f"Erro ao gerar resposta: {str(e)}")
 
     # Botão para a quarta pergunta
     if st.button(pergunta4):
         try:
-            resposta_gerada = model.generate_content(f"""{pergunta4}. Explique que existe um simulador da Receita Federal para calcular quanto a pessoa física deve doar de imposto de acordo com a regra percentual estabelecida pela Lei de Incentivo ao Esporte 
+            resposta = model.generate_content(f"""{pergunta4}. Explique que existe um simulador da Receita Federal para calcular quanto a pessoa física deve doar de imposto de acordo com a regra percentual estabelecida pela Lei de Incentivo ao Esporte 
             (abatimento de 7% do imposto devido para pessoas físicas). Indique o link do simulador: https://www27.receita.fazenda.gov.br/simulador-irpf/""")
-            st.write(resposta_gerada)
+            def to_markdown(text):
+              text = text.replace('•', '  *')
+              return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
+
+            st.markdown(f'{resposta.text}')
         except Exception as e:
             st.error(f"Erro ao gerar resposta: {str(e)}")
+
+    
 
     # Botão de Limpar a Consulta
     if st.button("Limpar consulta"):
