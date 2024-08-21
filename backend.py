@@ -54,7 +54,7 @@ if api_key:
     </style>
     """, unsafe_allow_html=True)
 
-        st.success("Operação concluída com sucesso!")
+    st.success("Operação concluída com sucesso!")
     st.markdown("""
     <style>
     .success {
