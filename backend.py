@@ -69,7 +69,6 @@ if api_key:
         try:
             resposta_gerada = model.generate_content(f"""{pergunta1}. Explique a Lei 11.438/2006, cujo texto completo é possível visualizar neste link: https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2006/Lei/L11438compilado.htm. 
             É importante ressaltar que as deduções de imposto agora são 2% para pessoa jurídica e 7% para pessoa física, atualização presente na Lei 11.439/2022 que é possível visualizar neste link: https://www.planalto.gov.br/ccivil_03/_Ato2019-2022/2022/Lei/L14439.htm#art1""")
-            st.write(resposta_gerada.generations[0].text)
         except Exception as e:
             st.error(f"Erro ao gerar resposta: {str(e)}")
 
@@ -77,7 +76,6 @@ if api_key:
     if st.button(pergunta2):
         try:
             resposta_gerada = model.generate_content(f"""{pergunta2}. Explique as diferenças entre manifestação desportiva educacional, de participação e de rendimento""")
-            st.write(resposta_gerada.generations[0].text)
         except Exception as e:
             st.error(f"Erro ao gerar resposta: {str(e)}")
 
@@ -91,7 +89,6 @@ if api_key:
             relacionados à Lei nº 11.438, de dezembro de 2006 - Lei de Incentivo ao Esporte (LIE) e alterações, que contribuem com o desenvolvimento e fortalecimento do desporto nacional. 
             A classificação dos selos foi desenvolvida seguindo requisitos criteriosamente planejados pelo Ministério do Esporte, de acordo com as necessidades do espectro esportivo e social do Brasil.” 
             Indique o seguinte link para obter mais informações: https://www.gov.br/esporte/pt-br/acoes-e-programas/lei-de-incentivo-ao-esporte/selo-lie/""")
-            st.write(resposta_gerada.generations[0].text)
         except Exception as e:
             st.error(f"Erro ao gerar resposta: {str(e)}")
 
@@ -100,7 +97,6 @@ if api_key:
         try:
             resposta_gerada = model.generate_content(f"""{pergunta4}. Explique que existe um simulador da Receita Federal para calcular quanto a pessoa física deve doar de imposto de acordo com a regra percentual estabelecida pela Lei de Incentivo ao Esporte 
             (abatimento de 7% do imposto devido para pessoas físicas). Indique o link do simulador: https://www27.receita.fazenda.gov.br/simulador-irpf/""")
-            st.write(resposta_gerada.generations[0].text)
         except Exception as e:
             st.error(f"Erro ao gerar resposta: {str(e)}")
 
