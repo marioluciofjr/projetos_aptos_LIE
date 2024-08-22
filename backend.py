@@ -30,7 +30,7 @@ if api_key:
                                       informações complexas em respostas claras e fáceis de entender. Sua função principal é garantir que as dúvidas dos usuários 
                                       sejam respondidas de forma eficaz, utilizando linguagem clara e objetiva.""")
     
-    st.success("Operação concluída com sucesso!")
+    st.success("API do Gemini ativada com sucesso!")
     st.markdown("""
     <style>
     .success {
