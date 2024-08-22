@@ -275,21 +275,5 @@ Orlando Silva de Jesus Júnior""")
 
 
 # Botão de Limpar a Consulta
-if st.button(<button class="custom-button">"Limpar consulta"</button>):
+if st.button("Limpar consulta"):
     st.session_state['resposta_faq'] = ""
-    st.markdown("""
-<style>
-.custom-button {
-   background-color: #4CAF50;
-   color: white;
-   padding: 14px 20px;
-   margin: 8px 0;
-   border: none;
-   cursor: pointer;
-   width: 100%;
-}
-.custom-button:hover {
-   opacity: 0.8;
-}
-</style>
-""", unsafe_allow_html=True)
