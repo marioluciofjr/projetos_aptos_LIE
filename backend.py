@@ -32,37 +32,37 @@ if api_key:
 
     # CSS para estilizar os botões
     # Defina os estilos CSS para os botões
-button_style = """
-<style>
-  div.stButton > button {{
-    background-color: {bg_color};
-    color: {fg_color};
-    padding: 10px 20px;
-    border: 2px solid {border_color};
-    border-radius: 4px;
-    cursor: pointer;
-    width: 200px;
-    transition: background-color 0.3s, color 0.3s;
-  }}
+    button_style = """
+    <style>
+      div.stButton > button {{
+        background-color: {bg_color};
+        color: {fg_color};
+        padding: 10px 20px;
+        border: 2px solid {border_color};
+        border-radius: 4px;
+        cursor: pointer;
+        width: 200px;
+        transition: background-color 0.3s, color 0.3s;
+      }}
 
-  div.stButton > button:hover {{
-    background-color: {hover_bg_color};
-    color: {hover_fg_color};
-  }}
+      div.stButton > button:hover {{
+        background-color: {hover_bg_color};
+        color: {hover_fg_color};
+      }}
 
-  div.stButton > button:active {{
-    background-color: {active_bg_color};
-    color: {active_fg_color};
-  }}
-</style>
-"""
+      div.stButton > button:active {{
+        background-color: {active_bg_color};
+        color: {active_fg_color};
+      }}
+    </style>
+    """
 
-# Função para criar um botão colorido
-def colored_button(label, bg_color, fg_color, border_color, hover_bg_color, hover_fg_color, active_bg_color, active_fg_color):
-    st.markdown(button_style.format(bg_color=bg_color, fg_color=fg_color, border_color=border_color, 
+    # Função para criar um botão colorido
+    def colored_button(label, bg_color, fg_color, border_color, hover_bg_color, hover_fg_color, active_bg_color, active_fg_color):
+        st.markdown(button_style.format(bg_color=bg_color, fg_color=fg_color, border_color=border_color, 
                                    hover_bg_color=hover_bg_color, hover_fg_color=hover_fg_color,
                                    active_bg_color=active_bg_color, active_fg_color=active_fg_color), unsafe_allow_html=True)
-    return st.button(label)
+        return st.button(label)
 
     
     # Título da Página
