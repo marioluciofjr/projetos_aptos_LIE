@@ -128,7 +128,7 @@ if api_key:
     projeto_selecionado = st.selectbox("Escolha o Projeto", df_filtrado['Projeto'].tolist())
 
     # Exibição dos Botões para Deliberação e Consulta de CNPJ
-    if st.button("Obter deliberação e consulta CNPJ", css_class="btn-1"):
+    if st.button("Obter deliberação e consulta CNPJ"):
         processo = df_filtrado[df_filtrado['Projeto'] == projeto_selecionado]['Processo'].values[0]
         cnpj = df_filtrado[df_filtrado['Projeto'] == projeto_selecionado]['CNPJ'].values[0]
         
@@ -148,7 +148,7 @@ if api_key:
     pergunta4 = "Qual é o valor que posso doar para os projetos?"
 
     # Botão para a primeira pergunta
-    if st.button(pergunta1, css_class="btn-2"):
+    if st.button(pergunta1):
         try:
             resposta = model.generate_content(f"""{pergunta1}. Explique a Lei 11.438/2006: LEI Nº 11.438, DE 29 DE DEZEMBRO DE 2006.
 
@@ -296,7 +296,7 @@ Orlando Silva de Jesus Júnior""")
             st.error(f"Erro ao gerar resposta: {str(e)}")
 
     # Botão para a segunda pergunta
-    if st.button(pergunta2, css_class="btn-3"):
+    if st.button(pergunta2):
         try:
             resposta = model.generate_content(f"""{pergunta2}. Explique as diferenças entre manifestação desportiva educacional, de participação e de rendimento""")
             def to_markdown(text):
@@ -308,7 +308,7 @@ Orlando Silva de Jesus Júnior""")
             st.error(f"Erro ao gerar resposta: {str(e)}")
 
     # Botão para a terceira pergunta
-    if st.button(pergunta3, css_class="btn-4"):
+    if st.button(pergunta3):
         try:
             resposta = model.generate_content(f"""{pergunta3}. Faça um disclaimer sobre o Selo LIE: 
             “Você sabia que a Lei de Incentivo ao Esporte (LIE) premia proponentes, projetos e patrocinadores ou doadores do esporte brasileiro com selos de qualidade? 
@@ -326,7 +326,7 @@ Orlando Silva de Jesus Júnior""")
             st.error(f"Erro ao gerar resposta: {str(e)}")
 
     # Botão para a quarta pergunta
-    if st.button(pergunta4, css_class="btn-5"):
+    if st.button(pergunta4):
         try:
             resposta = model.generate_content(f"""{pergunta4}. Explique que existe um simulador da Receita Federal para calcular quanto a pessoa física deve doar de imposto de acordo com a regra percentual estabelecida pela Lei de Incentivo ao Esporte 
             (abatimento de 7% do imposto devido para pessoas físicas). Indique o link do simulador: https://www27.receita.fazenda.gov.br/simulador-irpf/""")
@@ -338,6 +338,39 @@ Orlando Silva de Jesus Júnior""")
         except Exception as e:
             st.error(f"Erro ao gerar resposta: {str(e)}")    
 
-    # Botão de Limpar a Consulta
-    if st.button("Limpar consulta", css_class="btn-6"):
-        st.session_state['resposta_faq'] = ""
+# Defina os estilos CSS para os botões
+button_style = """
+<style>
+  div.stButton > button {{
+    background-color: {bg_color};
+    color: {fg_color};
+    padding: 10px 20px;
+    border: 2px solid {border_color};
+    border-radius: 4px;
+    cursor: pointer;
+    width: 200px;
+    transition: background-color 0.3s, color 0.3s;
+  }}
+
+  div.stButton > button:hover {{
+    background-color: {hover_bg_color};
+    color: {hover_fg_color};
+  }}
+
+  div.stButton > button:active {{
+    background-color: {active_bg_color};
+    color: {active_fg_color};
+  }}
+</style>
+"""
+
+# Função para criar um botão colorido
+def colored_button(label, bg_color, fg_color, border_color, hover_bg_color, hover_fg_color, active_bg_color, active_fg_color):
+    st.markdown(button_style.format(bg_color=bg_color, fg_color=fg_color, border_color=border_color, 
+                                   hover_bg_color=hover_bg_color, hover_fg_color=hover_fg_color,
+                                   active_bg_color=active_bg_color, active_fg_color=active_fg_color), unsafe_allow_html=True)
+    return st.button(label)
+
+# Botão de Limpar a Consulta
+if colored_button("Limpar consulta", "#dc3545", "white", "#dc3545", "white", "#dc3545", "#dc3545", "white"):
+    st.session_state['resposta_faq'] = ""
