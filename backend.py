@@ -82,7 +82,8 @@ if api_key:
     projeto_selecionado = st.selectbox("Escolha o Projeto", df_filtrado['Projeto'].tolist())
 
     # Exibição dos Botões para Deliberação e Consulta de CNPJ
-    if st.button("Obter deliberação e consulta CNPJ"):
+    if colored_button("Obter deliberação e consulta CNPJ", "#dc3545", "green", "#dc3545", "white", "#dc3545", "#dc3545", "white")
+    # st.button("Obter deliberação e consulta CNPJ"):
         processo = df_filtrado[df_filtrado['Projeto'] == projeto_selecionado]['Processo'].values[0]
         cnpj = df_filtrado[df_filtrado['Projeto'] == projeto_selecionado]['CNPJ'].values[0]
         
