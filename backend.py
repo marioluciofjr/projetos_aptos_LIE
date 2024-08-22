@@ -275,7 +275,7 @@ Orlando Silva de Jesus Júnior""")
 
 
 # Botão de Limpar a Consulta
-if st.button(<button class="custom-button">Limpar consulta</button>):
+if st.button(<button class="custom-button">"Limpar consulta"</button>):
     st.session_state['resposta_faq'] = ""
     st.markdown("""
 <style>
