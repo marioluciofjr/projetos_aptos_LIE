@@ -31,84 +31,38 @@ if api_key:
                                       sejam respondidas de forma eficaz, utilizando linguagem clara e objetiva.""")
 
     # CSS para estilizar os botões
-    st.markdown("""
-    <style>
-    /* Botão 1: "Obter deliberação e consulta CNPJ" */
-    .btn-1 {
-        background-color: blue;
-        color: white;
-        border: 2px solid white;
-        border-radius: 10px;
-    }
-    .btn-1:hover {
-        background-color: white;
-        color: blue;
-        border: 2px solid blue;
-    }
-    .btn-1:active {
-        background-color: gray;
-        color: white;
-        border: 2px solid gray;
-    }
+    # Defina os estilos CSS para os botões
+button_style = """
+<style>
+  div.stButton > button {{
+    background-color: {bg_color};
+    color: {fg_color};
+    padding: 10px 20px;
+    border: 2px solid {border_color};
+    border-radius: 4px;
+    cursor: pointer;
+    width: 200px;
+    transition: background-color 0.3s, color 0.3s;
+  }}
 
-    /* Botões 2, 3, 4 e 5 */
-    .btn-2, .btn-3, .btn-4, .btn-5 {
-        background-color: white;
-        color: purple;
-        border: 2px solid purple;
-        border-radius: 10px;
-    }
-    .btn-2:hover, .btn-3:hover, .btn-4:hover, .btn-5:hover {
-        background-color: yellow;
-        color: purple;
-        border: 2px solid purple;
-    }
-    .btn-2:active, .btn-3:active, .btn-4:active, .btn-5:active {
-        background-color: gray;
-        color: white;
-        border: 2px solid gray;
-    }
+  div.stButton > button:hover {{
+    background-color: {hover_bg_color};
+    color: {hover_fg_color};
+  }}
 
-    /* Botão 6: "Limpar consulta" */
-    .btn-6 {
-        background-color: red;
-        color: white;
-        border: 2px solid red;
-        border-radius: 10px;
-    }
-    .btn-6:hover {
-        background-color: white;
-        color: red;
-        border: 2px solid red;
-    }
-    .btn-6:active {
-        background-color: red;
-        color: white;
-        border: 2px solid red;
-    }
+  div.stButton > button:active {{
+    background-color: {active_bg_color};
+    color: {active_fg_color};
+  }}
+</style>
+"""
 
-    /* Aplicar as classes personalizadas */
-    .stButton > button {
-        font-size: 16px;
-        padding: 10px 20px;
-        margin-bottom: 10px;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-    st.success("API do Gemini ativada com sucesso!")
-    st.markdown("""
-    <style>
-    .success {
-        color: green;
-        animation: fadein 2s;
-    }
-    @keyframes fadein {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-    </style>
-    """, unsafe_allow_html=True)
+# Função para criar um botão colorido
+def colored_button(label, bg_color, fg_color, border_color, hover_bg_color, hover_fg_color, active_bg_color, active_fg_color):
+    st.markdown(button_style.format(bg_color=bg_color, fg_color=fg_color, border_color=border_color, 
+                                   hover_bg_color=hover_bg_color, hover_fg_color=hover_fg_color,
+                                   active_bg_color=active_bg_color, active_fg_color=active_fg_color), unsafe_allow_html=True)
+    return st.button(label)
 
     
     # Título da Página
@@ -338,38 +292,6 @@ Orlando Silva de Jesus Júnior""")
         except Exception as e:
             st.error(f"Erro ao gerar resposta: {str(e)}")    
 
-# Defina os estilos CSS para os botões
-button_style = """
-<style>
-  div.stButton > button {{
-    background-color: {bg_color};
-    color: {fg_color};
-    padding: 10px 20px;
-    border: 2px solid {border_color};
-    border-radius: 4px;
-    cursor: pointer;
-    width: 200px;
-    transition: background-color 0.3s, color 0.3s;
-  }}
-
-  div.stButton > button:hover {{
-    background-color: {hover_bg_color};
-    color: {hover_fg_color};
-  }}
-
-  div.stButton > button:active {{
-    background-color: {active_bg_color};
-    color: {active_fg_color};
-  }}
-</style>
-"""
-
-# Função para criar um botão colorido
-def colored_button(label, bg_color, fg_color, border_color, hover_bg_color, hover_fg_color, active_bg_color, active_fg_color):
-    st.markdown(button_style.format(bg_color=bg_color, fg_color=fg_color, border_color=border_color, 
-                                   hover_bg_color=hover_bg_color, hover_fg_color=hover_fg_color,
-                                   active_bg_color=active_bg_color, active_fg_color=active_fg_color), unsafe_allow_html=True)
-    return st.button(label)
 
 # Botão de Limpar a Consulta
 if colored_button("Limpar consulta", "#dc3545", "white", "#dc3545", "white", "#dc3545", "#dc3545", "white"):
