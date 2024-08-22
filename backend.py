@@ -279,14 +279,10 @@ if st.button("Limpar consulta"):
     st.session_state['resposta_faq'] = ""
     st.markdown("""
     <style>
-    .stButton > baseButton-secondary {
+    .stButton > button.st-emotion-cache-1vt4y43 ef3psqc13 {
         color: #f2f2f2;
         background-color: #230023;
         animation: fadein 2s;
-    }
-    @keyframes fadein {
-        from { opacity: 0; }
-        to { opacity: 1; }
     }
     </style>
     """, unsafe_allow_html=True)
