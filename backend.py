@@ -276,7 +276,8 @@ Orlando Silva de Jesus Júnior""")
 
 # Botão de Limpar a Consulta
 if st.button("Limpar consulta"):
-    st.markdown("""
+    st.session_state['resposta_faq'] = ""
+st.markdown("""
     <style>
     .success {
         color: green;
@@ -290,6 +291,5 @@ if st.button("Limpar consulta"):
     }
     </style>
     """, unsafe_allow_html=True)
-    st.session_state['resposta_faq'] = ""
     
 
