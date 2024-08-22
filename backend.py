@@ -337,7 +337,7 @@ st.markdown(
     }
 
     .stButton button[data-baseweb="button"][data-testid="stButton"][key='button6']:hover {
-        background-color: white; /* Fundo branco */
+        background-color: #230023; /* Fundo branco */
         color: red; /* Letras vermelhas */
         border: 2px solid red; /* Borda vermelha */
     }
