@@ -14,7 +14,7 @@ if api_key:
     model = genai.GenerativeModel(model_name='gemini-1.5-flash',
                                       generation_config={
                                           "candidate_count": 1,
-                                          "temperature": 0.75,
+                                          "temperature": 0.40,
                                           "top_k": 60,
                                           "top_p": 0.95
                                       },
@@ -249,7 +249,8 @@ Orlando Silva de Jesus Júnior""")
     if st.button(pergunta4):
         try:
             resposta = model.generate_content(f"""{pergunta4}. Explique que existe um simulador da Receita Federal para calcular quanto a pessoa física deve doar de imposto de acordo com a regra percentual estabelecida pela Lei de Incentivo ao Esporte 
-            (abatimento de 7% do imposto devido para pessoas físicas). Indique o link do simulador: https://www27.receita.fazenda.gov.br/simulador-irpf/. Dê um exemplo prático calculando o abatimento de 7% (Exemplo: Se você tiver 1000 reais de imposto devido, você pode abater 70 reais de acordo com a Lei de Incentivo ao Esporte. Totalizando assim 930 reais no final da declaração). Não utilize o cifrão "$" na sua resposta, pois desconfigura o texto.""")
+            (abatimento de 7% do imposto devido para pessoas físicas). Indique o link do simulador: https://www27.receita.fazenda.gov.br/simulador-irpf/. Dê um exemplo prático calculando o abatimento de 7% (Exemplo: Se você tiver 1000 reais de imposto devido, você pode abater 70 reais de acordo com a Lei de Incentivo ao Esporte. Totalizando assim 930 reais no final da declaração). 
+            Não utilize o cifrão "$" na sua resposta, pois desconfigura o texto. Faça uma resposta didática e objetiva, ou seja, sem se repetir demais.""")
             def to_markdown(text):
               text = text.replace('•', '  *')
               return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
