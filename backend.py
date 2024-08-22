@@ -279,7 +279,7 @@ if st.button("Limpar consulta"):
     st.session_state['resposta_faq'] = ""
     st.markdown("""
     <style>
-    .stButton > button {
+    .stButton > baseButton-secondary {
         color: #f2f2f2;
         background-color: #230023;
         animation: fadein 2s;
