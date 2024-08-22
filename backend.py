@@ -44,6 +44,76 @@ if api_key:
     </style>
     """, unsafe_allow_html=True)
 
+    st.markdown(
+    """
+    <style>
+    /* Botão 1 (Obter Deliberação e CNPJ): Azul */
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button1'] {
+        background-color: #007bff; /* Fundo azul */
+        color: white; /* Letras brancas */
+        border: 2px solid white; /* Borda branca */
+    }
+
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button1']:hover {
+        background-color: white; /* Fundo branco */
+        color: #007bff; /* Letras azuis */
+        border: 2px solid #007bff; /* Borda azul */
+    }
+
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button1']:active {
+        background-color: #ccc; /* Fundo cinza */
+        color: white; /* Letras brancas */
+        border: 2px solid #ccc; /* Borda cinza */
+    }
+
+    /* Botões 2, 3, 4 e 5 (Perguntas): Branco com borda roxa */
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button2'],
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button3'],
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button4'],
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button5'] {
+        background-color: white; /* Fundo branco */
+        color: #800080; /* Letras roxas */
+        border: 2px solid #800080; /* Borda roxa */
+    }
+
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button2']:hover,
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button3']:hover,
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button4']:hover,
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button5']:hover {
+        background-color: #ffff00; /* Fundo amarelo */
+        color: #800080; /* Letras roxas */
+        border: 2px solid #800080; /* Borda roxa */
+    }
+
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button2']:active,
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button3']:active,
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button4']:active,
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button5']:active {
+        background-color: #ccc; /* Fundo cinza */
+        color: white; /* Letras brancas */
+        border: 2px solid #ccc; /* Borda cinza */
+    }
+
+    /* Botão 6 (Limpar Consulta): Vermelho */
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button6'] {
+        background-color: red; /* Fundo vermelho */
+        color: white; /* Letras brancas */
+        border: 2px solid red; /* Borda vermelha */
+    }
+
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button6']:hover {
+        background-color: #230023; /* Fundo branco */
+        color: red; /* Letras vermelhas */
+        border: 2px solid red; /* Borda vermelha */
+    }
+
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button6']:active {
+        background-color: red; /* Fundo vermelho */
+        color: white; /* Letras brancas */
+        border: 2px solid red; /* Borda vermelha */
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
     
     # Título da Página
@@ -279,73 +349,3 @@ Orlando Silva de Jesus Júnior""")
 if st.button("Limpar consulta", key='button6'):
  st.session_state['resposta_faq'] = ""
 
-st.markdown(
-    """
-    <style>
-    /* Botão 1 (Obter Deliberação e CNPJ): Azul */
-    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button1'] {
-        background-color: #007bff; /* Fundo azul */
-        color: white; /* Letras brancas */
-        border: 2px solid white; /* Borda branca */
-    }
-
-    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button1']:hover {
-        background-color: white; /* Fundo branco */
-        color: #007bff; /* Letras azuis */
-        border: 2px solid #007bff; /* Borda azul */
-    }
-
-    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button1']:active {
-        background-color: #ccc; /* Fundo cinza */
-        color: white; /* Letras brancas */
-        border: 2px solid #ccc; /* Borda cinza */
-    }
-
-    /* Botões 2, 3, 4 e 5 (Perguntas): Branco com borda roxa */
-    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button2'],
-    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button3'],
-    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button4'],
-    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button5'] {
-        background-color: white; /* Fundo branco */
-        color: #800080; /* Letras roxas */
-        border: 2px solid #800080; /* Borda roxa */
-    }
-
-    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button2']:hover,
-    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button3']:hover,
-    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button4']:hover,
-    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button5']:hover {
-        background-color: #ffff00; /* Fundo amarelo */
-        color: #800080; /* Letras roxas */
-        border: 2px solid #800080; /* Borda roxa */
-    }
-
-    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button2']:active,
-    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button3']:active,
-    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button4']:active,
-    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button5']:active {
-        background-color: #ccc; /* Fundo cinza */
-        color: white; /* Letras brancas */
-        border: 2px solid #ccc; /* Borda cinza */
-    }
-
-    /* Botão 6 (Limpar Consulta): Vermelho */
-    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button6'] {
-        background-color: red; /* Fundo vermelho */
-        color: white; /* Letras brancas */
-        border: 2px solid red; /* Borda vermelha */
-    }
-
-    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button6']:hover {
-        background-color: #230023; /* Fundo branco */
-        color: red; /* Letras vermelhas */
-        border: 2px solid red; /* Borda vermelha */
-    }
-
-    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button6']:active {
-        background-color: red; /* Fundo vermelho */
-        color: white; /* Letras brancas */
-        border: 2px solid red; /* Borda vermelha */
-    }
-    </style>
-    """, unsafe_allow_html=True)
