@@ -275,5 +275,11 @@ Orlando Silva de Jesus Júnior""")
 
 
 # Botão de Limpar a Consulta
-if st.button("Limpar consulta"):
+if st.button("Limpar consulta", key="limpar"):
     st.session_state['resposta_faq'] = ""
+    .stButton > limpar {
+        color: #f2f2f2;
+        background-color: #230023;
+        font-size: 20px;
+    }
+    
