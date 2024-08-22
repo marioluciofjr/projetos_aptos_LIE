@@ -277,7 +277,7 @@ Orlando Silva de Jesus Júnior""")
 # Botão de Limpar a Consulta
 if st.button("Limpar consulta"):
     st.markdown("""<style>
-    elemento-referenciado {
+    .buutton {
         border: 30px solid blue;
         background-color: rgb(150, 215, 255);
         transition: 1s; //determina o tempo de transição para volta do estado normal font-size: 40px;
