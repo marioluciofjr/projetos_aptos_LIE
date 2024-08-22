@@ -29,6 +29,21 @@ if api_key:
                                       Você possui um profundo conhecimento sobre o assunto abordado no prompt e consegue sintetizar 
                                       informações complexas em respostas claras e fáceis de entender. Sua função principal é garantir que as dúvidas dos usuários 
                                       sejam respondidas de forma eficaz, utilizando linguagem clara e objetiva.""")
+    
+    st.success("Operação concluída com sucesso!")
+    st.markdown("""
+    <style>
+    .success {
+        color: green;
+        animation: fadein 2s;
+    }
+    @keyframes fadein {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 
     
     # Título da Página
