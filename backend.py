@@ -278,11 +278,19 @@ Orlando Silva de Jesus Júnior""")
 if st.button("Limpar consulta"):
     st.session_state['resposta_faq'] = ""
     st.markdown("""
-    <style>
-    .stButton > button {
-        color: #f2f2f2;
-        background-color: #230023;
-        animation: fadein 2s;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+<style>
+.custom-button {
+   background-color: #4CAF50;
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 100%;
+}
+.custom-button:hover {
+   opacity: 0.8;
+}
+</style>
+<button class="custom-button">Custom Button</button>
+""", unsafe_allow_html=True)
