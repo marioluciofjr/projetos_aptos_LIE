@@ -276,7 +276,12 @@ Orlando Silva de Jesus Júnior""")
 
 # Botão de Limpar a Consulta
 st.markdown("""<style>
-border: 30px solid blue;
+elemento-referenciado {
+    border: 30px solid blue;
+    background-color: rgb(150, 215, 255);
+transition: 1s; //determina o tempo de transição para volta do estado normal font-size: 40px;
+    cursor: pointer;
+}
 </style>""", unsafe_allow_html=True)
 if st.button("Limpar consulta"):
  st.session_state['resposta_faq'] = ""
