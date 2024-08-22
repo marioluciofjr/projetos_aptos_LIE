@@ -249,7 +249,7 @@ Orlando Silva de Jesus Júnior""")
     if st.button(pergunta4):
         try:
             resposta = model.generate_content(f"""{pergunta4}. Explique que existe um simulador da Receita Federal para calcular quanto a pessoa física deve doar de imposto de acordo com a regra percentual estabelecida pela Lei de Incentivo ao Esporte 
-            (abatimento de 7% do imposto devido para pessoas físicas). Indique o link do simulador: https://www27.receita.fazenda.gov.br/simulador-irpf/. Dê um exemplo prático calculando o abatimento de 7%.""")
+            (abatimento de 7% do imposto devido para pessoas físicas). Indique o link do simulador: https://www27.receita.fazenda.gov.br/simulador-irpf/. Dê um exemplo prático calculando o abatimento de 7% (Exemplo: Se você tiver 1000 reais de imposto devido, você pode abater 70 reais de acordo com a Lei de Incentivo ao Esporte. Totalizando assim 930 reais no final da declaração).""")
             def to_markdown(text):
               text = text.replace('•', '  *')
               return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
