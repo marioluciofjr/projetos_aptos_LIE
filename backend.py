@@ -277,15 +277,3 @@ Orlando Silva de Jesus Júnior""")
 # Botão de Limpar a Consulta
 if st.button("Limpar consulta"):
     st.session_state['resposta_faq'] = ""
-st.markdown("""
-    <style>
-    .button {
-        color: green;
-        animation: fadein 2s;
-        border: 30px solid blue;
-        background-color: #230023;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-    
-
