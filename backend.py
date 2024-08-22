@@ -277,7 +277,7 @@ Orlando Silva de Jesus Júnior""")
 # Botão de Limpar a Consulta
 if st.button("Limpar consulta", key="button1"):
     st.session_state['resposta_faq'] = ""
-    .stButton > button > button1 {
+    .stButton > button1 {
         color: #f2f2f2;
         background-color: #230023;
     }
