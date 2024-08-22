@@ -280,6 +280,5 @@ if st.button("Limpar consulta", key="limpar"):
     .stButton > limpar {
         color: #f2f2f2;
         background-color: #230023;
-        font-size: 20px;
     }
     
