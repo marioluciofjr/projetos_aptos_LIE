@@ -63,7 +63,7 @@ if api_key:
     projeto_selecionado = st.selectbox("Escolha o Projeto", df_filtrado['Projeto'].tolist())
 
     # Exibição dos Botões para Deliberação e Consulta de CNPJ
-    if st.button("Obter deliberação e consulta CNPJ"):
+    if st.button("Obter deliberação e consulta CNPJ", key='button1'):
         processo = df_filtrado[df_filtrado['Projeto'] == projeto_selecionado]['Processo'].values[0]
         cnpj = df_filtrado[df_filtrado['Projeto'] == projeto_selecionado]['CNPJ'].values[0]
         
@@ -83,7 +83,7 @@ if api_key:
     pergunta4 = "Qual é o valor que posso doar para os projetos?"
 
     # Botão para a primeira pergunta
-    if st.button(pergunta1):
+    if st.button(pergunta1, key='button2'):
         try:
             resposta = model.generate_content(f"""{pergunta1}. Explique a Lei 11.438/2006: LEI Nº 11.438, DE 29 DE DEZEMBRO DE 2006.
 
@@ -231,7 +231,7 @@ Orlando Silva de Jesus Júnior""")
             st.error(f"Erro ao gerar resposta: {str(e)}")
 
     # Botão para a segunda pergunta
-    if st.button(pergunta2):
+    if st.button(pergunta2, key='button3'):
         try:
             resposta = model.generate_content(f"""{pergunta2}. Explique as diferenças entre manifestação desportiva educacional, de participação e de rendimento""")
             def to_markdown(text):
@@ -243,7 +243,7 @@ Orlando Silva de Jesus Júnior""")
             st.error(f"Erro ao gerar resposta: {str(e)}")
 
     # Botão para a terceira pergunta
-    if st.button(pergunta3):
+    if st.button(pergunta3, key='button4'):
         try:
             resposta = model.generate_content(f"""{pergunta3}. Faça um disclaimer sobre o Selo LIE: 
             “Você sabia que a Lei de Incentivo ao Esporte (LIE) premia proponentes, projetos e patrocinadores ou doadores do esporte brasileiro com selos de qualidade? 
@@ -261,7 +261,7 @@ Orlando Silva de Jesus Júnior""")
             st.error(f"Erro ao gerar resposta: {str(e)}")
 
     # Botão para a quarta pergunta
-    if st.button(pergunta4):
+    if st.button(pergunta4, key='button5'):
         try:
             resposta = model.generate_content(f"""{pergunta4}. Explique que existe um simulador da Receita Federal para calcular quanto a pessoa física deve doar de imposto de acordo com a regra percentual estabelecida pela Lei de Incentivo ao Esporte 
             (abatimento de 7% do imposto devido para pessoas físicas). Indique o link do simulador: https://www27.receita.fazenda.gov.br/simulador-irpf/. Dê um exemplo prático calculando o abatimento de 7% (Exemplo: Se você tiver 1000 reais de imposto devido, você pode abater 70 reais de acordo com a Lei de Incentivo ao Esporte. Totalizando assim 930 reais no final da declaração). 
@@ -276,5 +276,76 @@ Orlando Silva de Jesus Júnior""")
 
 
 # Botão de Limpar a Consulta
-if st.button("Limpar consulta"):
+if st.button("Limpar consulta", key='button6'):
  st.session_state['resposta_faq'] = ""
+
+st.markdown(
+    """
+    <style>
+    /* Botão 1 (Obter Deliberação e CNPJ): Azul */
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button1'] {
+        background-color: #007bff; /* Fundo azul */
+        color: white; /* Letras brancas */
+        border: 2px solid white; /* Borda branca */
+    }
+
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button1']:hover {
+        background-color: white; /* Fundo branco */
+        color: #007bff; /* Letras azuis */
+        border: 2px solid #007bff; /* Borda azul */
+    }
+
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button1']:active {
+        background-color: #ccc; /* Fundo cinza */
+        color: white; /* Letras brancas */
+        border: 2px solid #ccc; /* Borda cinza */
+    }
+
+    /* Botões 2, 3, 4 e 5 (Perguntas): Branco com borda roxa */
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button2'],
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button3'],
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button4'],
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button5'] {
+        background-color: white; /* Fundo branco */
+        color: #800080; /* Letras roxas */
+        border: 2px solid #800080; /* Borda roxa */
+    }
+
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button2']:hover,
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button3']:hover,
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button4']:hover,
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button5']:hover {
+        background-color: #ffff00; /* Fundo amarelo */
+        color: #800080; /* Letras roxas */
+        border: 2px solid #800080; /* Borda roxa */
+    }
+
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button2']:active,
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button3']:active,
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button4']:active,
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button5']:active {
+        background-color: #ccc; /* Fundo cinza */
+        color: white; /* Letras brancas */
+        border: 2px solid #ccc; /* Borda cinza */
+    }
+
+    /* Botão 6 (Limpar Consulta): Vermelho */
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button6'] {
+        background-color: red; /* Fundo vermelho */
+        color: white; /* Letras brancas */
+        border: 2px solid red; /* Borda vermelha */
+    }
+
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button6']:hover {
+        background-color: white; /* Fundo branco */
+        color: red; /* Letras vermelhas */
+        border: 2px solid red; /* Borda vermelha */
+    }
+
+    .stButton button[data-baseweb="button"][data-testid="stButton"][key='button6']:active {
+        background-color: red; /* Fundo vermelho */
+        color: white; /* Letras brancas */
+        border: 2px solid red; /* Borda vermelha */
+    }
+    </style>
+    """, unsafe_allow_html=True)
