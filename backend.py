@@ -62,7 +62,7 @@ if api_key:
     projeto_selecionado = st.selectbox("Escolha o Projeto", df_filtrado['Projeto'].tolist())
 
     # Exibição dos Botões para Deliberação e Consulta de CNPJ
-    if st.button("Obter deliberação e consulta CNPJ", key='consultar'):
+    if st.button("Obter deliberação e consulta CNPJ"):
         processo = df_filtrado[df_filtrado['Projeto'] == projeto_selecionado]['Processo'].values[0]
         cnpj = df_filtrado[df_filtrado['Projeto'] == projeto_selecionado]['CNPJ'].values[0]
         
@@ -82,7 +82,7 @@ if api_key:
     pergunta4 = "Qual é o valor que posso doar para os projetos?"
 
     # Botão para a primeira pergunta
-    if st.button(pergunta1, key='pergunta1'):
+    if st.button(pergunta1):
         try:
             resposta = model.generate_content(f"""{pergunta1}. Explique a Lei 11.438/2006: LEI Nº 11.438, DE 29 DE DEZEMBRO DE 2006.
 
@@ -230,7 +230,7 @@ Orlando Silva de Jesus Júnior""")
             st.error(f"Erro ao gerar resposta: {str(e)}")
 
     # Botão para a segunda pergunta
-    if st.button(pergunta2, key='pergunta2'):
+    if st.button(pergunta2):
         try:
             resposta = model.generate_content(f"""{pergunta2}. Explique as diferenças entre manifestação desportiva educacional, de participação e de rendimento""")
             def to_markdown(text):
@@ -242,7 +242,7 @@ Orlando Silva de Jesus Júnior""")
             st.error(f"Erro ao gerar resposta: {str(e)}")
 
     # Botão para a terceira pergunta
-    if st.button(pergunta3, key='pergunta3'):
+    if st.button(pergunta3):
         try:
             resposta = model.generate_content(f"""{pergunta3}. Faça um disclaimer sobre o Selo LIE: 
             “Você sabia que a Lei de Incentivo ao Esporte (LIE) premia proponentes, projetos e patrocinadores ou doadores do esporte brasileiro com selos de qualidade? 
@@ -260,7 +260,7 @@ Orlando Silva de Jesus Júnior""")
             st.error(f"Erro ao gerar resposta: {str(e)}")
 
     # Botão para a quarta pergunta
-    if st.button(pergunta4, key='pergunta4'):
+    if st.button(pergunta4):
         try:
             resposta = model.generate_content(f"""{pergunta4}. Explique que existe um simulador da Receita Federal para calcular quanto a pessoa física deve doar de imposto de acordo com a regra percentual estabelecida pela Lei de Incentivo ao Esporte 
             (abatimento de 7% do imposto devido para pessoas físicas). Indique o link do simulador: https://www27.receita.fazenda.gov.br/simulador-irpf/. Dê um exemplo prático calculando o abatimento de 7% (Exemplo: Se você tiver 1000 reais de imposto devido, você pode abater 70 reais de acordo com a Lei de Incentivo ao Esporte. Totalizando assim 930 reais no final da declaração). 
@@ -274,19 +274,23 @@ Orlando Silva de Jesus Júnior""")
             st.error(f"Erro ao gerar resposta: {str(e)}")    
 
 
-# Botão de Limpar a Consulta
-if st.button("Limpar consulta", key='limpar_consulta'):
-    st.session_state['resposta_faq'] = ""    
-
-# Estilizando o botão específico
-st.markdown(
-    """
+# Botão de Limpar a Consulta usando HTML + CSS
+if st.markdown("""
+    <form action="#">
+        <input type="submit" value="Limpar consulta" class="special-button">
+    </form>
     <style>
-    .stButton[key='limpar_consulta'] button {
-        background-color: purple;
-        color: white;
-    }
+        .special-button {
+            background-color: purple;
+            color: white;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .special-button:hover {
+            background-color: #800080;
+        }
     </style>
-    """,
-    unsafe_allow_html=True
-)
+    """, unsafe_allow_html=True):
+    st.session_state['resposta_faq'] = ""
