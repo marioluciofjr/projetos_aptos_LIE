@@ -281,18 +281,16 @@ if st.markdown("""
     </form>
     <style>
         .special-button {
-            background-color: #ea4335;
+            background-color: purple;
             color: white;
             padding: 10px 24px;
             border: none;
-            border-radius: 10px;
+            border-radius: 4px;
             cursor: pointer;
         }
         .special-button:hover {
-            background-color: white;
-            color: #ea4335;
-            border: #ea4335;
+            background-color: #800080;
         }
     </style>
     """, unsafe_allow_html=True):
-        st.session_state = ""
+    st.session_state['resposta_faq'] = ""
