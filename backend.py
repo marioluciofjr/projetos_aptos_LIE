@@ -277,3 +277,16 @@ Orlando Silva de Jesus Júnior""")
 # Botão de Limpar a Consulta
 if st.button("Limpar consulta"):
     st.session_state['resposta_faq'] = ""    
+
+# Adicionando CSS para o último botão
+st.markdown(
+    """
+    <style>
+    .stButton:last-of-type button {
+        background-color: purple;
+        color: white;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
