@@ -283,8 +283,8 @@ st.markdown(
     """
     <style>
     .stButton[key='limpar_consulta'] button {
-        background-color: purple !important;
-        color: white !important;
+        background-color: purple;
+        color: white;
     }
     </style>
     """,
