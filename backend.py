@@ -274,6 +274,6 @@ Orlando Silva de Jesus Júnior""")
             st.error(f"Erro ao gerar resposta: {str(e)}")    
 
 
-# Botão de Limpar a Consulta
-if st.button("Limpar consulta"):
-    st.session_state['resposta_faq'] = ""
+    # Botão de Limpar a Consulta
+    if st.button("Limpar consulta"):
+        st.session_state['resposta_faq'] = ""
