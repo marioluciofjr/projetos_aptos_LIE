@@ -285,7 +285,7 @@ if st.markdown("""
             color: white;
             padding: 10px 24px;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
         }
         .special-button:hover {
@@ -293,4 +293,4 @@ if st.markdown("""
         }
     </style>
     """, unsafe_allow_html=True):
-    st.session_state['resposta_faq'] = ""
+        st.session_state['resposta_faq'] = ""
