@@ -278,15 +278,32 @@ Orlando Silva de Jesus Júnior""")
 if st.button("Limpar consulta"):
     st.session_state['resposta_faq'] = ""    
 
-    # Adicionando CSS para o último botão
-    st.markdown(
-        """
-        <style>
-        .stButton:last-of-type button {
-            background-color: purple;
-            color: white;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
+# Adicionando CSS para o último botão
+st.markdown(
+    """
+    <style>
+    .stButton button {
+        /* Estilo padrão para os botões */
+    }
+    .purple-button {
+        background-color: purple;
+        color: white;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+# Adicionando JavaScript para mudar a cor do último botão
+st.markdown(
+    """
+    <script>
+    window.addEventListener('load', function() {
+        const buttons = document.querySelectorAll('.stButton button');
+        const lastButton = buttons[buttons.length - 1];
+        lastButton.classList.add('purple-button');
+    });
+    </script>
+    """,
+    unsafe_allow_html=True
+)
