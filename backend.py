@@ -281,7 +281,7 @@ if st.markdown("""
     </form>
     <style>
         .special-button {
-            background-color: purple;
+            background-color: #ea4335;
             color: white;
             padding: 10px 24px;
             border: none;
@@ -289,8 +289,10 @@ if st.markdown("""
             cursor: pointer;
         }
         .special-button:hover {
-            background-color: #800080;
+            background-color: white;
+            color: #ea4335;
+            border: #ea4335;
         }
     </style>
     """, unsafe_allow_html=True):
-st.session_state['resposta_faq'] = ""
+    st.session_state['resposta_faq'] = ""
