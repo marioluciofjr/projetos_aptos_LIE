@@ -293,4 +293,4 @@ if st.markdown("""
         }
     </style>
     """, unsafe_allow_html=True):
-    st.session_state['resposta_faq'] = ""
+st.session_state['resposta_faq'] = ""
