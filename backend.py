@@ -278,11 +278,11 @@ Orlando Silva de Jesus Júnior""")
 if st.button("Limpar consulta", key='limpar_consulta'):
     st.session_state['resposta_faq'] = ""    
 
-# Estilização usando CSS
+# Estilizando o botão específico
 st.markdown(
     """
     <style>
-    .stButton button {
+    .stButton[key='limpar_consulta'] button {
         background-color: purple !important;
         color: white !important;
     }
