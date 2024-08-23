@@ -274,23 +274,23 @@ Orlando Silva de Jesus Júnior""")
             st.error(f"Erro ao gerar resposta: {str(e)}")    
 
 
-# Botão de Limpar a Consulta usando HTML + CSS
-if st.markdown("""
-    <form action="#">
-        <input type="submit" value="Limpar consulta" class="special-button">
-    </form>
-    <style>
-        .special-button {
-            background-color: purple;
-            color: white;
-            padding: 10px 24px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-        .special-button:hover {
-            background-color: #800080;
-        }
-    </style>
-    """, unsafe_allow_html=True):
+    # Botão de Limpar a Consulta usando HTML + CSS
+    if st.markdown("""
+        <form action="#">
+            <input type="submit" value="Limpar consulta" class="special-button">
+        </form>
+        <style>
+            .special-button {
+                background-color: purple;
+                color: white;
+                padding: 10px 24px;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+            }
+            .special-button:hover {
+                background-color: #800080;
+            }
+        </style>
+        """, unsafe_allow_html=True):
         st.session_state['resposta_faq'] = ""
