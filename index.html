@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos Aptos - Lei de Incentivo ao Esporte</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kreon:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Projetos Aptos - Lei de Incentivo ao Esporte</h1>
+        <div class="form-group">
+            <label for="manifestacao">Escolha a Manifestação Desportiva:</label>
+            <select id="manifestacao" class="dropdown">
+                <option value="">Selecione</option>
+                <option value="Educacional">Educacional</option>
+                <option value="Participação">Participação</option>
+                <option value="Rendimento">Rendimento</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="projeto">Escolha o Projeto:</label>
+            <select id="projeto" class="dropdown" disabled>
+                <option value="">Selecione a Manifestação primeiro</option>
+            </select>
+        </div>
+        <div class="buttons">
+            <button id="obterDados" class="btn" disabled>Obter deliberação e consulta CNPJ</button>
+        </div>
+        <div id="resultados" class="hidden">
+            <button id="consultarDeliberacao" class="btn link-btn">Consultar Deliberação</button>
+            <button id="consultarCNPJ" class="btn link-btn">Consultar CNPJ</button>
+        </div>
+        <div class="faq">
+            <h2>FAQ</h2>
+            <ul>
+                <li><a href="#" id="faq1">O que diz a Lei de Incentivo ao Esporte?</a></li>
+                <li><a href="#" id="faq2">O que significa cada manifestação desportiva?</a></li>
+                <li><a href="#" id="faq3">O que são os selos da Lei de Incentivo ao Esporte?</a></li>
+                <li><a href="#" id="faq4">Qual é o valor que posso doar para os projetos?</a></li>
+            </ul>
+        </div>
+        <div id="faqContent" class="faq-content hidden"></div>
+        <button id="reset" class="btn reset-btn">Limpar Consulta</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
