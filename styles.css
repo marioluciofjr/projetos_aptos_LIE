@@ -74,11 +74,13 @@ label {
 .faq h2 {
     font-weight: 700;
     margin-top: 20px;
+    text-align: left;
 }
 
 .faq ul {
     list-style-type: none;
     padding: 0;
+    text-align: left;
 }
 
 .faq li {
