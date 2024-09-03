@@ -1,316 +1,339 @@
-/* Cores principais */
+/* Definição das cores principais usando variáveis CSS */
 :root {
-    --blue: #0078D0;
-    --yellow: #FFB114;
-    --black: #000000;
-    --green: #00A651;
-    --red: #F0282D;
-    --white: #FFFFFF;
+    --blue: #0078D0; /* Azul principal */
+    --yellow: #FFB114; /* Amarelo principal */
+    --black: #000000; /* Preto */
+    --green: #00A651; /* Verde */
+    --red: #F0282D; /* Vermelho */
+    --white: #FFFFFF; /* Branco */
 
-    /* Cores estendidas */
-    --dark-blue: #00287F;
-    --light-blue: #ABEBFF;
-    --mid-blue: #0049AA;
-    --light-yellow: #FFF08C;
-    --mid-green: #00804D;
-    --light-green: #6BDB83;
-    --dark-red: #980F30;
-    --light-red: #FF9196;
-    --dark-gray: #2E2E2E;
-    --mid-gray: #5A5A5A;
-    --light-gray: #B4B4B4;
+    /* Cores adicionais */
+    --dark-blue: #00287F; /* Azul escuro */
+    --light-blue: #ABEBFF; /* Azul claro */
+    --mid-blue: #0049AA; /* Azul médio */
+    --light-yellow: #FFF08C; /* Amarelo claro */
+    --mid-green: #00804D; /* Verde médio */
+    --light-green: #6BDB83; /* Verde claro */
+    --dark-red: #980F30; /* Vermelho escuro */
+    --light-red: #FF9196; /* Vermelho claro */
+    --dark-gray: #2E2E2E; /* Cinza escuro */
+    --mid-gray: #5A5A5A; /* Cinza médio */
+    --light-gray: #B4B4B4; /* Cinza claro */
 }
 
-/* Estilos gerais */
+/* Estilos gerais para o corpo da página */
 body {
-    font-family: 'Quicksand', sans-serif;
-    background-color: var(--white);
-    color: var(--black);
-    margin: 0;
-    padding: 20px;
+    font-family: 'Quicksand', sans-serif; /* Fonte principal da página */
+    background-color: var(--white); /* Cor de fundo branca */
+    color: var(--black); /* Cor do texto preto */
+    margin: 0; /* Remove margens padrão */
+    padding: 20px; /* Espaçamento interno */
 }
 
+/* Estilos para o contêiner principal */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #E5E5E5;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 800px; /* Largura máxima do contêiner */
+    margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+    padding: 20px; /* Espaçamento interno */
+    background-color: #E5E5E5; /* Cor de fundo cinza claro */
+    border-radius: 10px; /* Arredonda os cantos do contêiner */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra ao redor do contêiner */
 }
 
-/* Anéis olímpicos girando */
+/* Estilos para os ícones dos anéis olímpicos */
 .olympic-rings {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    display: flex; /* Exibe os ícones em linha */
+    justify-content: center; /* Centraliza os ícones horizontalmente */
+    margin-bottom: 20px; /* Espaço inferior */
 }
 
 .rings-icon {
-    width: 150px;
-    height: 150px;
-    animation: spin 4s linear infinite;
+    width: 150px; /* Largura do ícone */
+    height: 150px; /* Altura do ícone */
+    animation: spin 4s linear infinite; /* Animação de rotação contínua */
 }
 
+/* Definição da animação de rotação */
 @keyframes spin {
     0% {
-        transform: rotate(0deg);
+        transform: rotate(0deg); /* Ponto inicial da rotação */
     }
-
     100% {
-        transform: rotate(360deg);
+        transform: rotate(360deg); /* Ponto final da rotação */
     }
 }
 
+/* Estilos para o cabeçalho */
 .header {
-    text-align: center;
-    margin-bottom: 20px;
-    /* Adicionado espaço extra para separar o título dos botões */
+    text-align: center; /* Centraliza o texto do cabeçalho */
+    margin-bottom: 20px; /* Espaço inferior */
 }
 
 h1 {
-    font-family: 'Kreon', serif;
-    font-weight: 700;
-    color: var(--blue);
-    margin: 0;
+    font-family: 'Kreon', serif; /* Fonte específica para o título */
+    font-weight: 700; /* Peso da fonte */
+    color: var(--blue); /* Cor do texto azul */
+    margin: 0; /* Remove margens padrão */
 }
 
 h2 {
-    font-family: 'Kreon', serif;
-    font-weight: 700;
-    color: var(--blue);
-    text-align: center;
+    font-family: 'Kreon', serif; /* Fonte específica para subtítulos */
+    font-weight: 700; /* Peso da fonte */
+    color: var(--blue); /* Cor do texto azul */
+    text-align: center; /* Centraliza o texto */
 }
 
+/* Estilos para grupos de formulário */
 .form-group {
-    margin: 15px 0;
+    margin: 15px 0; /* Espaçamento superior e inferior */
 }
 
 label {
-    font-family: 'Kreon', serif;
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
-    font-size: 1rem;
+    font-family: 'Kreon', serif; /* Fonte específica para rótulos */
+    display: block; /* Exibe o rótulo como bloco */
+    margin-bottom: 5px; /* Espaço inferior */
+    font-weight: 600; /* Peso da fonte */
+    font-size: 1rem; /* Tamanho da fonte */
 }
 
+/* Estilos para dropdowns */
 .dropdown {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid var(--mid-gray);
+    width: 100%; /* Largura total */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 5px; /* Arredonda os cantos */
+    border: 1px solid var(--mid-gray); /* Borda com cor cinza média */
 }
 
+/* Classe para ocultar elementos */
 .hidden {
-    display: none;
+    display: none; /* Oculta o elemento */
 }
 
+/* Classe para animação de fade-in */
 .fade-in {
-    opacity: 0;
-    animation: fadeInAnimation 0.5s forwards;
+    opacity: 0; /* Transparência inicial */
+    animation: fadeInAnimation 0.5s forwards; /* Animação de aparecimento */
 }
 
+/* Definição da animação de fade-in */
 @keyframes fadeInAnimation {
     to {
-        opacity: 1;
+        opacity: 1; /* Opacidade final */
     }
 }
 
+/* Estilos para botões padrão */
 .btn {
-    font-family: 'Quicksand', sans-serif;
-    background-color: var(--yellow);
-    color: var(--black);
-    padding: 10px 20px;
-    border: 2px solid var(--yellow);
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 700;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    margin-top: 20px;
-    /* Adicionado espaço entre o botão de pesquisa e os botões de resultados */
+    font-family: 'Quicksand', sans-serif; /* Fonte dos botões */
+    background-color: var(--yellow); /* Cor de fundo amarela */
+    color: var(--black); /* Cor do texto preta */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: 2px solid var(--yellow); /* Borda amarela */
+    border-radius: 5px; /* Arredonda os cantos */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    font-weight: 700; /* Peso da fonte */
+    text-decoration: none; /* Remove sublinhado */
+    display: inline-block; /* Exibe como bloco inline */
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transições suaves para hover */
+    margin-top: 20px; /* Espaçamento superior */
 }
 
+/* Estilos para hover em botões padrão */
 .btn:hover {
-    background-color: var(--light-yellow);
-    color: var(--dark-gray);
-    transform: scale(1.05);
-    border-color: var(--yellow);
+    background-color: var(--light-yellow); /* Cor de fundo ao passar o mouse */
+    color: var(--dark-gray); /* Cor do texto ao passar o mouse */
+    transform: scale(1.05); /* Aumenta o tamanho do botão ao passar o mouse */
+    border-color: var(--yellow); /* Cor da borda ao passar o mouse */
 }
 
-.btn-delibera{
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 400;
-    background-color: var(--black);
-    color: var(--white);
-    padding: 10px 20px;
-    border: 2px solid var(--black);
-    border-radius: 20px;
-    cursor: pointer;    
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    margin-top: 20px;
-    margin-right: 5px;
-    /* Adicionado espaço entre o botão de pesquisa e os botões de resultados */
+/* Estilos para botões de deliberação */
+.btn-delibera {
+    font-family: 'Quicksand', sans-serif; /* Fonte do botão */
+    font-weight: 400; /* Peso da fonte */
+    background-color: var(--black); /* Cor de fundo preta */
+    color: var(--white); /* Cor do texto branca */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: 2px solid var(--black); /* Borda preta */
+    border-radius: 20px; /* Arredonda os cantos */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    text-decoration: none; /* Remove sublinhado */
+    display: inline-block; /* Exibe como bloco inline */
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transições suaves para hover */
+    margin-top: 20px; /* Espaçamento superior */
+    margin-right: 5px; /* Espaçamento à direita */
 }
 
+/* Estilos para hover em botões de deliberação */
 .btn-delibera:hover {
-    background-color: var(--white);
-    color: var(--black);
-    transform: scale(1.05);
-    border-color: var(--black);
+    background-color: var(--white); /* Cor de fundo ao passar o mouse */
+    color: var(--black); /* Cor do texto ao passar o mouse */
+    transform: scale(1.05); /* Aumenta o tamanho do botão ao passar o mouse */
+    border-color: var(--black); /* Cor da borda ao passar o mouse */
 }
 
-.btn-cnpj{
-    font-family: 'Quicksand', sans-serif;
-    background-color: var(--black);
-    color: var(--white);
-    padding: 10px 20px;
-    border: 2px solid var(--black);
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 400;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    margin-top: 20px;
-    /* Adicionado espaço entre o botão de pesquisa e os botões de resultados */
+/* Estilos para botões de CNPJ */
+.btn-cnpj {
+    font-family: 'Quicksand', sans-serif; /* Fonte do botão */
+    background-color: var(--black); /* Cor de fundo preta */
+    color: var(--white); /* Cor do texto branca */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: 2px solid var(--black); /* Borda preta */
+    border-radius: 20px; /* Arredonda os cantos */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    font-weight: 400; /* Peso da fonte */
+    text-decoration: none; /* Remove sublinhado */
+    display: inline-block; /* Exibe como bloco inline */
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transições suaves para hover */
+    margin-top: 20px; /* Espaçamento superior */
 }
 
+/* Estilos para hover em botões de CNPJ */
 .btn-cnpj:hover {
-    background-color: var(--white);
-    color: var(--black);
-    transform: scale(1.05);
-    border-color: var(--black);
+    background-color: var(--white); /* Cor de fundo ao passar o mouse */
+    color: var(--black); /* Cor do texto ao passar o mouse */
+    transform: scale(1.05); /* Aumenta o tamanho do botão ao passar o mouse */
+    border-color: var(--black); /* Cor da borda ao passar o mouse */
 }
 
-
-
+/* Estilos para botão de reset */
 .reset-btn {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-    background-color: var(--red);
-    color: var(--white);
-    border-radius: 5px;
-    margin-top: 20px;
-    border: 2px solid var(--red);
+    font-family: 'Quicksand', sans-serif; /* Fonte do botão */
+    font-weight: 700; /* Peso da fonte */
+    background-color: var(--red); /* Cor de fundo vermelha */
+    color: var(--white); /* Cor do texto branca */
+    border-radius: 5px; /* Arredonda os cantos */
+    margin-top: 20px; /* Espaçamento superior */
+    border: 2px solid var(--red); /* Borda vermelha */
 }
 
+/* Estilos para hover no botão de reset */
 .reset-btn:hover {
-    background-color: var(--light-red);
-    color: var(--black);
-    border-color: var(--red);
+    background-color: var(--light-red); /* Cor de fundo ao passar o mouse */
+    color: var(--black); /* Cor do texto ao passar o mouse */
+    border-color: var(--red); /* Cor da borda ao passar o mouse */
 }
 
+/* Estilos para título de FAQ */
 .faq h2 {
-    font-weight: 700;
-    margin-top: 20px;
+    font-weight: 700; /* Peso da fonte */
+    margin-top: 20px; /* Espaçamento superior */
 }
 
+/* Estilos para contêiner de acordeão */
 .accordion {
-    font-family: 'Quicksand', sans-serif;
-    margin-top: 20px;
-    text-align: left;
+    font-family: 'Quicksand', sans-serif; /* Fonte do acordeão */
+    margin-top: 20px; /* Espaçamento superior */
+    text-align: left; /* Alinhamento do texto */
 }
 
+/* Estilos para item de acordeão */
 .accordion-item {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Espaço inferior */
 }
 
+/* Estilos para botão de acordeão */
 .accordion-button {
-    font-family: 'Kreon', serif;
-    width: 100%;
-    background-color: var(--blue);
-    color: var(--white);
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 700;
-    text-align: left;
-    border: 2px solid var(--blue);
-    font-size: 1rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Kreon', serif; /* Fonte do botão */
+    width: 100%; /* Largura total */
+    background-color: var(--blue); /* Cor de fundo azul */
+    color: var(--white); /* Cor do texto branca */
+    padding: 10px; /* Espaçamento interno */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Arredonda os cantos */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    font-weight: 700; /* Peso da fonte */
+    text-align: left; /* Alinhamento do texto */
+    border: 2px solid var(--blue); /* Borda azul */
+    font-size: 1rem; /* Tamanho da fonte */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transições suaves para hover */
 }
 
+/* Estilos para hover no botão de acordeão */
 .accordion-button:hover {
-    background-color: var(--light-blue);
-    color: var(--black);
+    background-color: var(--light-blue); /* Cor de fundo ao passar o mouse */
+    color: var(--black); /* Cor do texto ao passar o mouse */
 }
 
+/* Estilos para conteúdo de acordeão */
 .accordion-content {
-    display: none;
-    padding: 10px;
-    background-color: var(--white);
-    border-radius: 5px;
-    border: 1px solid var(--mid-gray);
-    color: var(--black);
+    display: none; /* Oculta o conteúdo por padrão */
+    padding: 10px; /* Espaçamento interno */
+    background-color: var(--white); /* Cor de fundo branca */
+    border-radius: 5px; /* Arredonda os cantos */
+    border: 1px solid var(--mid-gray); /* Borda cinza média */
+    color: var(--black); /* Cor do texto preta */
 }
 
+/* Estilos para parágrafos dentro do conteúdo de acordeão */
 .accordion-content p {
-    margin: 10px 0;
+    margin: 10px 0; /* Espaçamento superior e inferior */
 }
 
+/* Regras de mídia para telas pequenas */
 @media only screen and (max-width: 600px) {
     .rings-icon {
-        width: 100px;
-        height: 100px;
+        width: 100px; /* Ajusta a largura do ícone */
+        height: 100px; /* Ajusta a altura do ícone */
     }
 
     .accordion-content {
-        font-size: 14px;
+        font-size: 14px; /* Ajusta o tamanho da fonte para telas menores */
     }
 }
 
+/* Estilos para o rodapé */
 footer {
-    background-color: var(--white);
-    color: var(--black);
-    padding: 0px;
-    margin-top: 23px;
-    align-items: center;
-    bottom: 0;
-    width: 100%;
+    background-color: var(--white); /* Cor de fundo branca */
+    color: var(--black); /* Cor do texto preta */
+    padding: 0px; /* Remove espaçamento */
+    margin-top: 23px; /* Espaçamento superior */
+    align-items: center; /* Centraliza os itens verticalmente */
+    bottom: 0; /* Posiciona no fundo da página */
+    width: 100%; /* Largura total */
 }
 
+/* Estilos para o conteúdo do rodapé */
 .footer-content {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    text-align: center;
-    
+    display: flex; /* Exibe os itens em linha */
+    justify-content: space-around; /* Espaço ao redor dos itens */
+    align-items: center; /* Centraliza os itens verticalmente */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha se necessário */
+    text-align: center; /* Centraliza o texto */
 }
 
+/* Estilos para texto no rodapé */
 .footer-content p {
-    margin: 0;
-    font-weight: 600;
+    margin: 0; /* Remove margens */
+    font-weight: 600; /* Peso da fonte */
 }
 
+/* Estilos para ícones sociais no rodapé */
 .social-icons {
-    display: flex;
-    gap: 10px;
+    display: flex; /* Exibe os ícones em linha */
+    gap: 10px; /* Espaçamento entre os ícones */
 }
 
+/* Estilos para cada ícone social */
 .social-icon {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease;
+    width: 24px; /* Largura do ícone */
+    height: 24px; /* Altura do ícone */
+    transition: transform 0.3s ease; /* Transição suave para transformações */
 }
 
+/* Estilos para hover nos ícones sociais */
 .social-icon:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Aumenta o ícone ao passar o mouse */
 }
 
+/* Regras de mídia para telas pequenas */
 @media only screen and (max-width: 600px) {
     .footer-content {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: column; /* Exibe o conteúdo do rodapé em coluna */
+        gap: 10px; /* Espaçamento entre os itens */
     }
 
     .social-icon {
-        width: 30px;
-        height: 30px;
+        width: 30px; /* Ajusta a largura do ícone para telas menores */
+        height: 30px; /* Ajusta a altura do ícone para telas menores */
     }
 }
