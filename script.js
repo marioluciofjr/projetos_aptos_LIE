@@ -1,105 +1,115 @@
+// Variável global para armazenar os dados da planilha
 let sheetData = [];
 
-// Função para carregar os dados da planilha
+// Função para carregar os dados da planilha do Google Sheets
 function loadSheetData() {
+    // URL da planilha em formato TSV (valores separados por tabulação)
     const sheetUrl = 'https://docs.google.com/spreadsheets/d/1N2QmLKcZ1QBLm3gbWoqrARCS8pklGUkMP4LJHCJP4Ek/export?format=tsv';
 
+    // Faz uma requisição para a URL da planilha
     fetch(sheetUrl)
-        .then(response => response.text())
+        .then(response => response.text()) // Converte a resposta para texto
         .then(tsvData => {
-            const lines = tsvData.split('\n');
-            const headers = lines[0].split('\t');
-            sheetData = lines.slice(1).map(line => {
-                const values = line.split('\t');
-                let entry = {};
+            const lines = tsvData.split('\n'); // Separa os dados em linhas
+            const headers = lines[0].split('\t'); // A primeira linha contém os cabeçalhos
+            sheetData = lines.slice(1).map(line => { // Percorre cada linha a partir da segunda
+                const values = line.split('\t'); // Separa os valores de cada linha
+                let entry = {}; // Cria um objeto para armazenar cada entrada
                 headers.forEach((header, index) => {
+                    // Atribui os valores ao objeto de entrada utilizando os cabeçalhos como chaves
                     entry[header.trim()] = values[index] ? values[index].trim() : '';
                 });
-                return entry;
+                return entry; // Retorna o objeto de entrada
             });
-            populateManifestacao(sheetData);
+            populateManifestacao(sheetData); // Chama a função para popular o dropdown de manifestações
         })
-        .catch(error => console.error('Erro ao carregar a planilha:', error));
+        .catch(error => console.error('Erro ao carregar a planilha:', error)); // Captura e exibe erros
 }
 
 // Função para popular o dropdown de manifestação desportiva
 function populateManifestacao(data) {
-    const manifestacaoDropdown = document.getElementById('manifestacao');
+    const manifestacaoDropdown = document.getElementById('manifestacao'); // Seleciona o elemento dropdown
     manifestacaoDropdown.addEventListener('change', function () {
+        // Quando o usuário seleciona uma manifestação, chama a função para popular os projetos correspondentes
         populateProjetos(data, this.value);
     });
 }
 
-// Função para popular o dropdown de projetos
+// Função para popular o dropdown de projetos com base na manifestação selecionada
 function populateProjetos(data, manifestacao) {
-    const projetoDropdown = document.getElementById('projeto');
-    projetoDropdown.innerHTML = '<option value="">Selecione</option>';
-    projetoDropdown.disabled = manifestacao === '';
+    const projetoDropdown = document.getElementById('projeto'); // Seleciona o elemento dropdown de projetos
+    projetoDropdown.innerHTML = '<option value="">Selecione</option>'; // Reseta o conteúdo do dropdown
+    projetoDropdown.disabled = manifestacao === ''; // Desabilita o dropdown se nenhuma manifestação for selecionada
 
     data.forEach(row => {
+        // Filtra os projetos de acordo com a manifestação desportiva selecionada
         if (row['Manifestação Desportiva'] === manifestacao) {
-            const option = document.createElement('option');
-            option.value = row['Projeto'];
-            option.textContent = row['Projeto'];
-            projetoDropdown.appendChild(option);
+            const option = document.createElement('option'); // Cria uma nova opção
+            option.value = row['Projeto']; // Define o valor da opção
+            option.textContent = row['Projeto']; // Define o texto a ser exibido
+            projetoDropdown.appendChild(option); // Adiciona a opção ao dropdown
         }
     });
 
-    projetoDropdown.disabled = false;
+    projetoDropdown.disabled = false; // Habilita o dropdown após adicionar as opções
 }
 
-// Evento para o botão "Pesquisar"
+// Evento para o botão "Pesquisar" que busca informações sobre o projeto selecionado
 document.getElementById('obterDados').addEventListener('click', function () {
-    const projetoSelecionado = document.getElementById('projeto').value;
-    const projetoInfo = sheetData.find(row => row['Projeto'] === projetoSelecionado);
+    const projetoSelecionado = document.getElementById('projeto').value; // Obtém o projeto selecionado
+    const projetoInfo = sheetData.find(row => row['Projeto'] === projetoSelecionado); // Busca os dados do projeto selecionado
 
     if (projetoInfo) {
-        const processo = projetoInfo['Processo'];
-        const cnpj = projetoInfo['CNPJ'];
+        const processo = projetoInfo['Processo']; // Obtém o número do processo do projeto
+        const cnpj = projetoInfo['CNPJ']; // Obtém o CNPJ do projeto
 
+        // Links para consulta de deliberação e CNPJ
         const deliberacaoLink = `https://www.in.gov.br/consulta/-/buscar/dou?q=%22${processo}%22&s=todos&exactDate=all&sortType=0&delta=20&orgPrin=Minist%C3%A9rio+do+Esporte&orgSub=Secretaria+Executiva&artType=Delibera%C3%A7%C3%A3o`;
         const cnpjLink = `https://casadosdados.com.br/solucao/cnpj?q=${cnpj}`;
 
+        // Define o evento de clique para o botão de deliberação
         document.getElementById('consultarDeliberacao').onclick = function () {
-            // Adiciona um atraso 1 segundo antes de abrir a página
+            // Adiciona um atraso de 1,5 segundos antes de abrir a página de deliberação
             setTimeout(function () {
                 window.open(deliberacaoLink, '_blank');
-            }, 1000);
+            }, 1500);
         };
+        
+        // Define o evento de clique para o botão de CNPJ
         document.getElementById('consultarCNPJ').onclick = function () {
-             // Adiciona um atraso 1 segundo antes de abrir a página
+            // Adiciona um atraso de 1,5 segundos antes de abrir a página do CNPJ
             setTimeout(function () {
                 window.open(cnpjLink, '_blank');
-            }, 1000);
+            }, 1500);
         };
 
-        document.getElementById('resultados').classList.remove('hidden');
+        document.getElementById('resultados').classList.remove('hidden'); // Exibe os botões de resultado
     }
 });
 
 // Evento para o botão "Limpar Consulta"
 document.getElementById('reset').addEventListener('click', function () {
-    document.getElementById('manifestacao').value = '';
-    document.getElementById('projeto').innerHTML = '<option value="">Selecione a Manifestação primeiro</option>';
-    document.getElementById('projeto').disabled = true;
-    document.getElementById('resultados').classList.add('hidden');
-    document.querySelectorAll('.accordion-content').forEach(item => item.style.display = 'none');
+    document.getElementById('manifestacao').value = ''; // Reseta o valor do dropdown de manifestações
+    document.getElementById('projeto').innerHTML = '<option value="">Selecione a Manifestação primeiro</option>'; // Reseta o conteúdo do dropdown de projetos
+    document.getElementById('projeto').disabled = true; // Desabilita o dropdown de projetos
+    document.getElementById('resultados').classList.add('hidden'); // Oculta os botões de resultado
+    document.querySelectorAll('.accordion-content').forEach(item => item.style.display = 'none'); // Oculta todo o conteúdo do FAQ
 });
 
-// Função para controlar a lógica dos acordes do FAQ
+// Função para controlar a lógica de abertura e fechamento dos itens do FAQ
 document.querySelectorAll('.accordion-button').forEach(button => {
     button.addEventListener('click', function () {
-        const content = this.nextElementSibling;
+        const content = this.nextElementSibling; // Seleciona o próximo elemento (conteúdo do FAQ)
         if (content.style.display === 'block') {
-            content.style.display = 'none';
+            content.style.display = 'none'; // Oculta o conteúdo se já estiver visível
         } else {
-            document.querySelectorAll('.accordion-content').forEach(item => item.style.display = 'none');
-            content.style.display = 'block';
+            document.querySelectorAll('.accordion-content').forEach(item => item.style.display = 'none'); // Oculta todos os conteúdos do FAQ
+            content.style.display = 'block'; // Exibe o conteúdo clicado
         }
     });
 });
 
-// Funções para mostrar o conteúdo do FAQ
+// Funções para mostrar o conteúdo de cada item do FAQ
 document.getElementById('faq1').addEventListener('click', function () {
     showFaqContent('faqContent1', `
         <p>A Lei de Incentivo ao Esporte (Lei nº 11.438/2006) visa fomentar as atividades esportivas no Brasil, concedendo incentivos fiscais para pessoas físicas e jurídicas que apoiarem projetos esportivos e paradesportivos.</p>
@@ -165,11 +175,12 @@ document.getElementById('faq4').addEventListener('click', function () {
     `);
 });
 
+// Função para exibir o conteúdo de cada FAQ
 function showFaqContent(contentId, content) {
-    const faqContentDiv = document.getElementById(contentId);
-    faqContentDiv.innerHTML = content;
-    faqContentDiv.style.display = 'block';
+    const faqContentDiv = document.getElementById(contentId); // Seleciona o elemento de conteúdo do FAQ
+    faqContentDiv.innerHTML = content; // Adiciona o conteúdo HTML ao elemento
+    faqContentDiv.style.display = 'block'; // Exibe o conteúdo
 }
 
-// Carrega os dados ao iniciar
+// Carrega os dados ao carregar a página
 window.onload = loadSheetData;
