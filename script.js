@@ -61,10 +61,16 @@ document.getElementById('obterDados').addEventListener('click', function () {
         const cnpjLink = `https://casadosdados.com.br/solucao/cnpj?q=${cnpj}`;
 
         document.getElementById('consultarDeliberacao').onclick = function () {
-            window.open(deliberacaoLink, '_blank');
+            // Adiciona um atraso 1 segundo antes de abrir a página
+            setTimeout(function () {
+                window.open(deliberacaoLink, '_blank');
+            }, 1000);
         };
         document.getElementById('consultarCNPJ').onclick = function () {
-            window.open(cnpjLink, '_blank');
+             // Adiciona um atraso 1 segundo antes de abrir a página
+            setTimeout(function () {
+                window.open(cnpjLink, '_blank');
+            }, 1000);
         };
 
         document.getElementById('resultados').classList.remove('hidden');
