@@ -1,25 +1,85 @@
-body {
-    font-family: 'Quicksand', sans-serif;
-    background-color: #f2f2f2;
-    color: #230023;
-    margin: 0;
-    padding: 20px;
+/* Cores principais */
+:root {
+    --blue: #0078D0;
+    --yellow: #FFB114;
+    --black: #000000;
+    --green: #00A651;
+    --red: #F0282D;
+    --white: #FFFFFF;
+
+    /* Cores estendidas */
+    --dark-blue: #00287F;
+    --light-blue: #ABEBFF;
+    --mid-blue: #0049AA;
+    --light-yellow: #FFF08C;
+    --mid-green: #00804D;
+    --light-green: #6BDB83;
+    --dark-red: #980F30;
+    --light-red: #FF9196;
+    --dark-gray: #2E2E2E;
+    --mid-gray: #5A5A5A;
+    --light-gray: #B4B4B4;
 }
 
-h1, h2 {
-    font-family: 'Kreon', serif;
-    font-weight: 700;
-    color: #230023;
-    text-align: center;
+/* Estilos gerais */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+    margin: 0;
+    padding: 20px;
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: white;
+    background-color: #E5E5E5;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Anéis olímpicos girando */
+.olympic-rings {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.rings-icon {
+    width: 150px;
+    height: 150px;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    /* Adicionado espaço extra para separar o título dos botões */
+}
+
+h1 {
+    font-family: 'Kreon', serif;
+    font-weight: 700;
+    color: var(--blue);
+    margin: 0;
+}
+
+h2 {
+    font-family: 'Kreon', serif;
+    font-weight: 700;
+    color: var(--blue);
+    text-align: center;
 }
 
 .form-group {
@@ -27,89 +87,230 @@ h1, h2 {
 }
 
 label {
+    font-family: 'Kreon', serif;
     display: block;
     margin-bottom: 5px;
     font-weight: 600;
+    font-size: 1rem;
 }
 
 .dropdown {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.buttons, .faq, .reset-btn, #resultados {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.btn {
-    background-color: #230023;
-    color: #f2f2f2;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #8b008b;
-    transform: scale(1.05);
-}
-
-.btn:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-.link-btn {
-    margin: 5px;
-}
-
-.faq h2 {
-    font-weight: 700;
-    margin-top: 20px;
-    text-align: left;
-}
-
-.faq ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: left;
-}
-
-.faq li {
-    margin-bottom: 10px;
-}
-
-.faq a {
-    color: #230023;
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.faq a:hover {
-    color: #8b008b;
-    text-decoration: none;
-}
-
-.faq-content {
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--mid-gray);
 }
 
 .hidden {
     display: none;
 }
 
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 0.5s forwards;
+}
+
+@keyframes fadeInAnimation {
+    to {
+        opacity: 1;
+    }
+}
+
+.btn {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--yellow);
+    color: var(--black);
+    padding: 10px 20px;
+    border: 2px solid var(--yellow);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    margin-top: 20px;
+    /* Adicionado espaço entre o botão de pesquisa e os botões de resultados */
+}
+
+.btn:hover {
+    background-color: var(--light-yellow);
+    color: var(--dark-gray);
+    transform: scale(1.05);
+    border-color: var(--yellow);
+}
+
+.btn-delibera{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 10px 20px;
+    border: 2px solid var(--black);
+    border-radius: 20px;
+    cursor: pointer;    
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    margin-top: 20px;
+    margin-right: 5px;
+    /* Adicionado espaço entre o botão de pesquisa e os botões de resultados */
+}
+
+.btn-delibera:hover {
+    background-color: var(--white);
+    color: var(--black);
+    transform: scale(1.05);
+    border-color: var(--black);
+}
+
+.btn-cnpj{
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 10px 20px;
+    border: 2px solid var(--black);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 400;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    margin-top: 20px;
+    /* Adicionado espaço entre o botão de pesquisa e os botões de resultados */
+}
+
+.btn-cnpj:hover {
+    background-color: var(--white);
+    color: var(--black);
+    transform: scale(1.05);
+    border-color: var(--black);
+}
+
+
+
 .reset-btn {
-    background-color: #ff4d4d;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    background-color: var(--red);
+    color: var(--white);
+    border-radius: 5px;
+    margin-top: 20px;
+    border: 2px solid var(--red);
+}
+
+.reset-btn:hover {
+    background-color: var(--light-red);
+    color: var(--black);
+    border-color: var(--red);
+}
+
+.faq h2 {
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.accordion {
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+}
+
+.accordion-button {
+    font-family: 'Kreon', serif;
+    width: 100%;
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    text-align: left;
+    border: 2px solid var(--blue);
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.accordion-button:hover {
+    background-color: var(--light-blue);
+    color: var(--black);
+}
+
+.accordion-content {
+    display: none;
+    padding: 10px;
+    background-color: var(--white);
+    border-radius: 5px;
+    border: 1px solid var(--mid-gray);
+    color: var(--black);
+}
+
+.accordion-content p {
+    margin: 10px 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .rings-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .accordion-content {
+        font-size: 14px;
+    }
+}
+
+footer {
+    background-color: var(--white);
+    color: var(--black);
+    padding: 0px;
+    margin-top: 23px;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    
+}
+
+.footer-content p {
+    margin: 0;
+    font-weight: 600;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+@media only screen and (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .social-icon {
+        width: 30px;
+        height: 30px;
+    }
 }
