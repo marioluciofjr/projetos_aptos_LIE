@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projetos Aptos - Lei de Incentivo ao Esporte</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Kreon:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kreon:wght@400;700&family=Quicksand:wght@400;700&display=swap"
+        rel="stylesheet">
 </head>
-  
+
 <body>
-  <div class="container">
-   <h1>Projetos Aptos - Lei de Incentivo ao Esporte</h1>
+    <div class="container">
+        <!-- Ícone dos anéis olímpicos girando -->
+        <div class="olympic-rings">
+            <img src="https://cdn-icons-png.flaticon.com/128/523/523676.png" alt="Anéis Olímpicos" class="rings-icon">
+
+            <img src="https://cdn-icons-png.flaticon.com/128/10573/10573812.png" alt="Anéis Olímpicos"
+                class="rings-icon">
+        </div>
+        <div class="header">
+            <h1>Projetos Aptos - Lei de Incentivo ao Esporte</h1>
+        </div>
         <div class="form-group">
             <label for="manifestacao">Escolha a Manifestação Desportiva:</label>
             <select id="manifestacao" class="dropdown">
@@ -26,26 +37,56 @@
                 <option value="">Selecione a Manifestação primeiro</option>
             </select>
         </div>
-        <div class="buttons">
-            <button id="obterDados" class="btn" disabled>Obter deliberação e consulta CNPJ</button>
+        <!-- Botão de pesquisa sempre visível -->
+        <div id="botao-pesquisa">
+            <button id="obterDados" class="btn">🔍 Pesquisar</button>
         </div>
+        <!-- Botões de resultados iniciais ocultos -->
         <div id="resultados" class="hidden">
-            <button id="consultarDeliberacao" class="btn link-btn">Consultar Deliberação</button>
-            <button id="consultarCNPJ" class="btn link-btn">Consultar CNPJ</button>
+            <button id="consultarDeliberacao" class="btn-delibera">Deliberação</button>
+            <button id="consultarCNPJ" class="btn-cnpj">CNPJ</button>
         </div>
         <div class="faq">
-            <h2>FAQ</h2>
-            <ul>
-                <li><a href="#" id="faq1">O que diz a Lei de Incentivo ao Esporte?</a></li>
-                <li><a href="#" id="faq2">O que significa cada manifestação desportiva?</a></li>
-                <li><a href="#" id="faq3">O que são os selos da Lei de Incentivo ao Esporte?</a></li>
-                <li><a href="#" id="faq4">Qual é o valor que posso doar para os projetos?</a></li>
-            </ul>
+            <h2>Perguntas frequentes</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button id="faq1" class="accordion-button">O que diz a Lei de Incentivo ao Esporte?</button>
+                    <div class="accordion-content" id="faqContent1"></div>
+                </div>
+                <div class="accordion-item">
+                    <button id="faq2" class="accordion-button">O que significa cada manifestação desportiva?</button>
+                    <div class="accordion-content" id="faqContent2"></div>
+                </div>
+                <div class="accordion-item">
+                    <button id="faq3" class="accordion-button">O que são os selos da Lei de Incentivo ao
+                        Esporte?</button>
+                    <div class="accordion-content" id="faqContent3"></div>
+                </div>
+                <div class="accordion-item">
+                    <button id="faq4" class="accordion-button">Qual é o valor que posso doar para os projetos?</button>
+                    <div class="accordion-content" id="faqContent4"></div>
+                </div>
+            </div>
         </div>
-        <div id="faqContent" class="faq-content hidden"></div>
-        <button id="reset" class="btn reset-btn">Limpar Consulta</button>
+        <button id="reset" class="btn reset-btn">🧹 Limpar</button>
     </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>2024 - Mário Lúcio - projeto_AluraGemini</p>
+            <div class="social-icons">
+                <a href="https://linkedin.com/in/marioluciofjr" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1051/1051282.png" alt="LinkedIn"
+                        class="social-icon">
+                </a>
+                <a href="https://github.com/marioluciofjr" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1051/1051275.png" alt="GitHub" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
