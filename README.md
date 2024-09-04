@@ -15,15 +15,15 @@ Este projeto foi desenvolvido graças a Imersão Dev_ Alura & Google
 
 ## Introdução
 
-Este projeto tem como objetivo democratizar o acesso a informações sobre projetos esportivos aptos a receberem investimentos/doações pela Lei de Incentivo ao Esporte, facilitando a consulta de dados como agência, conta bancária e empresa proponente por meio do CNPJ. A plataforma, construída com HTML, CSS e JavaScript, tem o deploy no GitHub Pages, permite que pessoas físicas e jurídicas interessadas em investir no esporte brasileiro encontrem rapidamente oportunidades e compreendam melhor como funciona esse incentivo que pode gerar abatimento no imposto de renda.
+Este projeto tem como objetivo democratizar o acesso a informações sobre projetos esportivos aptos a receberem investimentos/doações pela Lei de Incentivo ao Esporte, facilitando a consulta de dados como agência, conta bancária e empresa proponente por meio do CNPJ. A plataforma foi construída com as linguagens HTML, CSS e JavaScript, sendo que o deploy foi feito no GitHub Pages. É uma página web simples que permite que pessoas físicas e jurídicas, interessadas em investir no esporte brasileiro, encontrem rapidamente oportunidades e compreendam melhor como funciona esse incentivo que pode gerar abatimento no imposto de renda.
 
 Com poucos cliques, você terá acesso a informações que não estão disponíveis de forma centralizada no site oficial do Ministério do Esporte, agilizando o processo de decisão para quem busca apoiar iniciativas esportivas de fato.
 
 ## Como surgiu a ideia deste projeto?
 
-Muito antes da Imersão Dev_ Alura & Google, eu já estava pesquisando sobre como incentivar o esporte brasileiro. As Olimpíadas de Paris foram bem emocionantes, principalmente ao acompanhar as histórias de vida por trás das pessoas que estavam ali disputando medalhas. Sou entusiasta da ideia de que o esporte pode transformar vidas e que o Brasil tem grandes chances de melhorar a performance no ranking de medalhas se houver mais incentivo. 
+Muito antes da Imersão Dev_ Alura & Google, eu já estava pesquisando sobre como incentivar o esporte brasileiro. As Olimpíadas de Paris foram bem emocionantes para mim, principalmente ao acompanhar as histórias de vida por trás das pessoas que estavam ali disputando medalhas. Sou entusiasta da ideia de que o esporte pode transformar vidas e que o Brasil tem grandes chances de melhorar a performance no ranking de medalhas se houver mais incentivo. 
 
-Nas primeiras pesquisas que fiz eu quis entender o funcionamento da [Lei de Incentivo ao Esporte](https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2006/Lei/L11438compilado.htm). Entrei no site do Ministério do Esporte e identifiquei a aba de "Projetos aptos à captação". Ao baixar a planilha e visualizar os dados, percebi a falta de informações sobre agência e conta para doar de fato, nem tão pouco dados de contato para os projetos. É uma planilha com erros de preenchimento e sem muitos detalhes de como as pessoas podem se envolver com os projetos em si. 
+Nas primeiras pesquisas que fiz, quis entender o funcionamento da [Lei de Incentivo ao Esporte](https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2006/Lei/L11438compilado.htm). Entrei no site do Ministério do Esporte e identifiquei a aba de "Projetos aptos à captação". Ao baixar a planilha em Excel e visualizar os dados, percebi a falta de informações sobre agência e conta para doar de fato e dados de contato (telefone e e-mail) dos projetos. É uma planilha com erros de preenchimento e sem muitos detalhes de como as pessoas podem se envolver com os projetos em si. 
 
 Desbravando a internet em busca de respostas para esse problema, identifiquei que os projetos aprovados pela Lei de Incentivo ao Esporte são apresentados no Diário Oficial da União, que é um veículo de comunicação do governo federal que publica assuntos de interesse público e governamental. Lá identifiquei as agências e contas de cada projeto que eu pesquisava pelo código de processo.
 
@@ -97,6 +97,8 @@ Durante o projeto utilizei várias ferramentas muito úteis e deixo aqui os link
 
 + [Milanote](https://app.milanote.com/) - para gerar toda a linha de raciocínio do projeto por meio da compilação de links, textos, imagens etc;
 + [Figma](https://www.figma.com/) - para trabalhar as imagens em svg;
++ [Projetos aptos à captação](https://www.gov.br/esporte/pt-br/acoes-e-programas/lei-de-incentivo-ao-esporte/projetos-aptos-a-captacao-atualizada-27-10-23.xlsx/@@download/file) - link da planilha oficial do Ministério do Esporte, que serviu como base dos dados em Google Sheets;
++ [PROJETOS_APTOS](https://docs.google.com/spreadsheets/d/1N2QmLKcZ1QBLm3gbWoqrARCS8pklGUkMP4LJHCJP4Ek/copy?gid=0#gid=0) - planilha em Google Sheets em que compilei os dados de 3911 projetos;
 + [Gemini](https://gemini.google.com/app) - explicar certos trechos de código;
 + [ChatGPT](https://chatgpt.com/) - construção de trechos e gerar comentários em todos os códigos;
 + [OneCompiler](https://onecompiler.com/html) - testar os códigos html, css e javascript e verificar se estava responsivo;
