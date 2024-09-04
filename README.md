@@ -72,7 +72,7 @@ Além do abatimento na declaração de imposto, há vários outros fatores que p
   sript.js<br><br>
 </div>
 
-1. **Carregamento dinâmico de dados**: Carrega dados de uma planilha do Google Sheets utilizando o formato TSV, converte os dados para um formato JSON e armazena-os em uma variável para uso posterior na página.
+1. **Carregamento dinâmico de dados**: Carrega dados de uma planilha do Google Sheets (que reúne 3911 projetos, com período de captação de recursos entre 2025 e 2026, selecionados a partir da planilha "Projetos aptos à captação", presente no site do [Ministério do Esporte](https://www.gov.br/esporte/pt-br/acoes-e-programas/lei-de-incentivo-ao-esporte/projetos-aptos-a-captacao-atualizada-27-10-23.xlsx/view)) utilizando o formato TSV, converte os dados para um formato JSON e armazena-os em uma variável para uso posterior na página.
 2. **População de dropdowns interativos**: Utiliza os dados carregados para popular dinamicamente os dropdowns de "Manifestação Desportiva" e "Projeto", permitindo a seleção de diferentes categorias e projetos relacionados.
 3. **Geração de links dinâmicos para consulta**: Baseado na seleção do usuário, gera links dinâmicos para consultar deliberações e CNPJs em sites externos, adicionando um atraso para abertura em novas abas do navegador.
 4. **Funcionalidade de FAQ Interativa**: Implementa uma lógica de acordeão para a seção de perguntas frequentes (FAQ), permitindo que os usuários expandam e recolham o conteúdo com um clique.
