@@ -45,6 +45,7 @@ body {
     display: flex; /* Exibe os ícones em linha */
     justify-content: center; /* Centraliza os ícones horizontalmente */
     margin-bottom: 20px; /* Espaço inferior */
+    gap: 10px; /* Adiciona espaçamento de 10px entre os ícones */
 }
 
 .rings-icon {
