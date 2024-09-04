@@ -29,7 +29,7 @@ Além do abatimento na declaração de imposto, há vários outros fatores que p
 + **Desenvolvimento Regional:** O investimento em infraestrutura esportiva e em projetos esportivos nas diversas regiões do país contribui para o desenvolvimento econômico e social.
 + **Legado Olímpico:** O esporte é um legado fundamental para o país, e sua doação pode ajudar a manter vivo o espírito olímpico e paraolímpico.
 + **Retorno Social:** Os investimentos em esporte geram um retorno social significativo, com melhorias na qualidade de vida e no desenvolvimento humano.
-+ **Transformação Social:** O esporte tem o poder de transformar vidas e comunidades, promovendo a igualdade de oportunidades e a inclusão. Com isso, podemos ver possíveis atletas no nível de Rebeca Andrade, Isaquias Queiróz, Bia Souza, Rayssa Leal, Medina, entre tantos outros.
++ **Transformação Social:** O esporte tem o poder de transformar vidas e comunidades, promovendo a igualdade de oportunidades e a inclusão. Com isso, podemos ver possíveis atletas no nível de Rebeca Andrade, Isaquias Queiróz, Bia Souza, Rayssa Leal, Medina, Caio Bonfim, Fernanda Yara, Gabrielzinho, entre tantos outros atletas olímpicos/paralímpicos.
 
 ## Como utilizar o site
 
