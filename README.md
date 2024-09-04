@@ -13,9 +13,9 @@ Este projeto foi desenvolvido graças a Imersão Dev_ Alura & Google
 
 ## Introdução
 
-Este projeto tem como objetivo democratizar o acesso a informações sobre projetos esportivos incentivados no Brasil, facilitando a consulta de dados como agência, conta bancária e empresa proponente através do CNPJ. A plataforma, construída com HTML, CSS e JavaScript, permite que pessoas físicas e jurídicas interessadas em investir no esporte encontrem rapidamente oportunidades e compreendam melhor como funciona a Lei de Incentivo ao Esporte.
+Este projeto tem como objetivo democratizar o acesso a informações sobre projetos esportivos aptos a receberem investimentos/doações pela Lei de Incentivo ao Esporte, facilitando a consulta de dados como agência, conta bancária e empresa proponente por meio do CNPJ. A plataforma, construída com HTML, CSS e JavaScript, tem o deploy no GitHub Pages, permite que pessoas físicas e jurídicas interessadas em investir no esporte brasileiro encontrem rapidamente oportunidades e compreendam melhor como funciona esse incentivo que pode gerar abatimento no imposto de renda.
 
-Com poucos cliques, você terá acesso a informações que não estão disponíveis de forma centralizada no site oficial do Ministério do Esporte, agilizando o processo de decisão para quem busca apoiar iniciativas esportivas.
+Com poucos cliques, você terá acesso a informações que não estão disponíveis de forma centralizada no site oficial do Ministério do Esporte, agilizando o processo de decisão para quem busca apoiar iniciativas esportivas de fato.
 
 ## Por que doar para o esporte brasileiro?
 
@@ -33,13 +33,14 @@ Além do abatimento na declaração de imposto, há vários outros fatores que p
 
 ## Como utilizar o site
 
-1. Escolha uma das três manifestações desportivas (Educacional, Participação ou Rendimento);
-2. Escolha um projeto apto para receber a Lei de Incentivo ao Esporte;
-3. Clique no botão "🔍 Obter deliberação e cnpj";
-4. Ao clicar no botão "Deliberação", abrirá uma outra aba que redireciona para o site do Diário Oficial da União. Pode ser que esse link leve um tempinho para atualizar. Copie o código do processo que se inicia por "71000", clique no link de deliberação e pesquise na página pelo código de processo que acabou de copiar;
-5. Ao clicar no botão CNPJ, abrirá uma outra aba que redireciona para o site Casa dos Dados. Lá você obterá as informações completas sobre o CNPJ da empresa que submeteu o projeto que escolheu;
-6. Na parte das "Perguntas Frequentes" você pode saber um pouco mais sobre a Lei de Incentivo ao Esporte e demais informações a respeito;
-7. Se clicar no botão "🧹 Limpar", a página volta do zero para você escolher outro projeto.
+1. Acesse o site [Projetos Aptos - Lei de Incentivo ao Esporte](https://marioluciofjr.github.io/projetos_aptos_LIE/);
+2. Escolha uma das três manifestações desportivas (Educacional, Participação ou Rendimento);
+3. Escolha um projeto apto para receber a Lei de Incentivo ao Esporte;
+4. Clique no botão "🔍 Obter deliberação e cnpj";
+5. Ao clicar no botão "Deliberação", abrirá uma outra aba que redireciona para o site do Diário Oficial da União. Pode ser que esse link leve um tempinho para atualizar. Copie o código do processo que se inicia por "71000", clique no link de deliberação e pesquise na página pelo código de processo que acabou de copiar;
+6. Ao clicar no botão CNPJ, abrirá uma outra aba que redireciona para o site Casa dos Dados. Lá você obterá as informações completas sobre o CNPJ da empresa que submeteu o projeto que escolheu;
+7. Na parte das "Perguntas Frequentes" você pode saber um pouco mais sobre a Lei de Incentivo ao Esporte e demais informações a respeito;
+8. Se clicar no botão "🧹 Limpar", a página volta do zero para você escolher outro projeto.
 
 [AQUI TERÁ UM GIF DEMONSTRATIVO]
 
