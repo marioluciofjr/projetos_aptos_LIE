@@ -17,6 +17,16 @@ Este projeto tem como objetivo democratizar o acesso a informações sobre proje
 
 Com poucos cliques, você terá acesso a informações que não estão disponíveis de forma centralizada no site oficial do Ministério do Esporte, agilizando o processo de decisão para quem busca apoiar iniciativas esportivas de fato.
 
+## Como surgiu a ideia deste projeto?
+
+Muito antes da Imersão Dev_ Alura & Google, eu já estava pesquisando sobre como incentivar o esporte brasileiro. As Olimpíadas de Paris foram bem emocionantes, principalmente ao acompanhar as histórias de vida por trás das pessoas que estavam ali disputando medalhas. Sou entusiasta da ideia de que o esporte pode transformar vidas e que o Brasil tem grandes chances de melhorar a performance no ranking de medalhas se houver mais incentivo. 
+
+Nas primeiras pesquisas que fiz eu quis entender o funcionamento da [Lei de Incentivo ao Esporte](https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2006/Lei/L11438compilado.htm). Entrei no site do Ministério do Esporte e identifiquei a aba de "Projetos aptos à captação". Ao baixar a planilha e visualizar os dados, percebi a falta de informações sobre agência e conta para doar de fato, nem tão pouco dados de contato para os projetos. É uma planilha com erros de preenchimento e sem muitos detalhes de como as pessoas podem se envolver com os projetos em si. 
+
+Desbravando a internet em busca de respostas para esse problema, identifiquei que os projetos aprovados pela Lei de Incentivo ao Esporte são apresentados no Diário Oficial da União, que é um veículo de comunicação do governo federal que publica assuntos de interesse público e governamental. Lá identifiquei as agências e contas de cada projeto que eu pesquisava pelo código de processo.
+
+Depois desse momento "Eureka", pensei em desenvolver uma plataforma simples para que as pessoas saibam quais são os projetos aptos para doação/investimento e como entrar em contato com essas organizações, uma vez que disponibilizo uma consulta ao CNPJ de cada proponente. Por conta de dúvidas sobre as nuances da LGPD, eu escolhi apenas divulgar os links onde têm as informações necessárias, isentando-me de quaisquer dados divulgados que supostamente não estejam devidamente públicos em órgãos oficiais. O filtro pela Manifestação Desportiva e os projetos foi a forma mais simples e menos burocrática que achei para entregar as informações rapidamente.
+
 ## Por que doar para o esporte brasileiro?
 
 Além do abatimento na declaração de imposto, há vários outros fatores que podem ser decisivos para você doar recursos para fortalecer o esporte no Brasil, dentre eles:
