@@ -8,6 +8,7 @@ Este projeto foi desenvolvido graças a Imersão Dev_ Alura & Google
 > [Por que doar para o esporte brasileiro?](https://github.com/marioluciofjr/projetos_aptos_LIE#por-que-doar-para-o-esporte-brasileiro)\
 > [Como utilizar o site](https://github.com/marioluciofjr/projetos_aptos_LIE#como-utilizar-o-site)\
 > [Estrutura do projeto](https://github.com/marioluciofjr/projetos_aptos_LIE#estrutura-do-projeto)\
+> [Links úteis](https://github.com/marioluciofjr/projetos_aptos_LIE/edit/main/README.md#links-%C3%BAteis)\
 > [Contribuições](https://github.com/marioluciofjr/projetos_aptos_LIE#contribui%C3%A7%C3%B5es)\
 > [Licença](https://github.com/marioluciofjr/projetos_aptos_LIE#licen%C3%A7a)\
 > [Contato](https://github.com/marioluciofjr/projetos_aptos_LIE#contato)
@@ -48,12 +49,14 @@ Além do abatimento na declaração de imposto, há vários outros fatores que p
 2. Escolha uma das três manifestações desportivas (Educacional, Participação ou Rendimento);
 3. Escolha um projeto apto para receber a Lei de Incentivo ao Esporte;
 4. Clique no botão "🔍 Obter deliberação e cnpj";
-5. Ao clicar no botão "Deliberação", abrirá uma outra aba que redireciona para o site do Diário Oficial da União. Pode ser que esse link leve um tempinho para atualizar. Copie o código do processo que se inicia por "71000", clique no link de deliberação e pesquise na página pelo código de processo que acabou de copiar;
-6. Ao clicar no botão CNPJ, abrirá uma outra aba que redireciona para o site Casa dos Dados. Lá você obterá as informações completas sobre o CNPJ da empresa que submeteu o projeto que escolheu;
+5. Ao clicar no botão "Deliberação", abrirá uma outra aba que redireciona para o site do Diário Oficial da União. Coloquei um delay de 1,5 segundo para dar tempo de atualizar a página do Diário Oficial. Copie o código do processo que se inicia por "71000", clique no link de deliberação e pesquise na página pelo código de processo que acabou de copiar;
+6. Ao clicar no botão CNPJ, abrirá uma outra aba que redireciona para o site Casa dos Dados. Coloquei um delay de 1,5 segundo para dar tempo de atualizar a página da Casa dos Dados. Lá você obterá as informações completas sobre o CNPJ da empresa que submeteu o projeto que escolheu;
 7. Na parte das "Perguntas Frequentes" você pode saber um pouco mais sobre a Lei de Incentivo ao Esporte e demais informações a respeito;
 8. Se clicar no botão "🧹 Limpar", a página volta do zero para você escolher outro projeto.
 
-[AQUI TERÁ UM GIF DEMONSTRATIVO]
+<div>
+  <img align="center" src="https://github.com/marioluciofjr/projetos_aptos_LIE/blob/main/Imagens/tutorial_lie.gif?raw=true" />
+</div>
 
 ## Estrutura do projeto
 <div>
@@ -88,6 +91,25 @@ Além do abatimento na declaração de imposto, há vários outros fatores que p
 3. **Geração de links dinâmicos para consulta**: Baseado na seleção do usuário, gera links dinâmicos para consultar deliberações e CNPJs em sites externos, adicionando um atraso para abertura em novas abas do navegador.
 4. **Funcionalidade de FAQ Interativa**: Implementa uma lógica de acordeão para a seção de perguntas frequentes (FAQ), permitindo que os usuários expandam e recolham o conteúdo com um clique.
 5. **Reset de seleção e conteúdo dinâmico**: Fornece uma funcionalidade para limpar seleções e redefinir o conteúdo da página, mantendo a experiência de usuário limpa e fácil de gerenciar.
+
+## Links Úteis
+Durante o projeto utilizei várias ferramentas muito úteis e deixo aqui os links e alguns comentários de como foram importantes para mim neste projeto, até mesmo para quem deseja saber melhor ou mesmo compor seus próprios trabalhos:
+
++ [Milanote](https://app.milanote.com/) - para gerar toda a linha de raciocínio do projeto por meio da compilação de links, textos, imagens etc;
++ [Figma](https://www.figma.com/) - para trabalhar as imagens em svg;
++ [Gemini](https://gemini.google.com/app) - explicar certos trechos de código;
++ [ChatGPT](https://chatgpt.com/) - construção de trechos e gerar comentários em todos os códigos;
++ [OneCompiler](https://onecompiler.com/html) - testar os códigos html, css e javascript e verificar se estava responsivo;
++ [Olympic Brand Guidelines](https://stillmed.olympics.com/media/Documents/International-Olympic-Committee/Olympic-brand/Olympic-Brand-Guidelines.pdf) - para identificar a paleta de cores oficial dos Jogos Olímpicos;
++ [ScreenToGif](https://www.screentogif.com/) - serviu para fazer o gif do tutorial de como mexer no site;
++ [VS Code](https://code.visualstudio.com/download) - para estruturar o código em si e fazer mais testes;
++ [Badges Generator](https://badgesgenerator.com/) - para criar as badges presentes neste README;
++ [Devicon](https://devicon.dev/) - utilizar os ícones das linguagens html, css e javascript;
++ [Imersão Dev com Gemini [Guia de Mergulho]](https://grupoalura.notion.site/Imers-o-Dev-com-Gemini-Guia-de-Mergulho-7742af09c51649348a91f67157df8a41#4b72e0a2a43445abb490e252b8d5faed) - guia excelente para compreender cada detalhe da Imersão Dev_;
++ [Página da Lei de Incentivo ao Esporte](https://www.gov.br/esporte/pt-br/acoes-e-programas/lei-de-incentivo-ao-esporte) - foi essencial para eu compreender como funciona a Lei de Incentivo ao Esporte, quais são os projetos aptos para doação e investimento, quais são as etapas que cada projeto em período de captação deve seguir e assim por diante;
++ [Quer doar parte de seu Imposto de Renda para projetos da Lei de Incentivo ao Esporte? Saiba como](https://youtu.be/lutHIt0DC2Q?si=MPEiPnkbJ4JQdJCY) - vídeo didático do Ministério do Esporte que explica como funciona a doação para projetos aptos pela Lei de Incentivo ao Esporte;
++ [Guia básico de Markdown](https://docs.pipz.com/central-de-ajuda/learning-center/guia-basico-de-markdown#open) - a fim de construir um README coeso, organizado e didático;
++ [Sintaxe básica de gravação e formatação no GitHub](https://docs.github.com/pt/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) - documentação oficial do GitHub sobre o README e vários outros detalhes importantíssimos na construção de um repositório de qualidade.
 
 ## Contribuições
 Contribuições são bem-vindas! Se você tem sugestões para melhorar este projeto, sinta-se à vontade para criar um fork do repositório, fazer suas alterações e enviar um pull request.
