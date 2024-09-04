@@ -33,7 +33,7 @@ Além do abatimento na declaração de imposto, há vários outros fatores que p
 
 ## Como utilizar o site
 
-1. Acesse o site [Projetos Aptos - Lei de Incentivo ao Esporte](https://marioluciofjr.github.io/projetos_aptos_LIE/);
+1. Acesse o site <a href="https://marioluciofjr.github.io/projetos_aptos_LIE" target="_blank">Projetos Aptos - Lei de Incentivo ao Esporte</a>;
 2. Escolha uma das três manifestações desportivas (Educacional, Participação ou Rendimento);
 3. Escolha um projeto apto para receber a Lei de Incentivo ao Esporte;
 4. Clique no botão "🔍 Obter deliberação e cnpj";
