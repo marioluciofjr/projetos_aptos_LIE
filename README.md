@@ -99,8 +99,7 @@ Durante o projeto utilizei várias ferramentas muito úteis e deixo aqui os link
 + [Figma](https://www.figma.com/) - para trabalhar as imagens em svg;
 + [Projetos aptos à captação](https://www.gov.br/esporte/pt-br/acoes-e-programas/lei-de-incentivo-ao-esporte/projetos-aptos-a-captacao-atualizada-27-10-23.xlsx/@@download/file) - link da planilha oficial do Ministério do Esporte, que serviu como base dos dados em Google Sheets;
 + [PROJETOS_APTOS](https://docs.google.com/spreadsheets/d/1N2QmLKcZ1QBLm3gbWoqrARCS8pklGUkMP4LJHCJP4Ek/copy?gid=0#gid=0) - planilha em Google Sheets em que compilei os dados de 3911 projetos;
-+ [Gemini](https://gemini.google.com/app) - explicar certos trechos de código;
-+ [ChatGPT](https://chatgpt.com/) - construção de trechos e gerar comentários em todos os códigos;
++ [Gemini](https://gemini.google.com/app) - explicação de funcionalidades no código, construção de trechos e comentários no código (dica importante da Aula 4 da Imersão Dev_ Alura & Google);
 + [OneCompiler](https://onecompiler.com/html) - testar os códigos html, css e javascript e verificar se estava responsivo;
 + [Olympic Brand Guidelines](https://stillmed.olympics.com/media/Documents/International-Olympic-Committee/Olympic-brand/Olympic-Brand-Guidelines.pdf) - para identificar a paleta de cores oficial dos Jogos Olímpicos;
 + [ScreenToGif](https://www.screentogif.com/) - serviu para fazer o gif do tutorial de como mexer no site;
