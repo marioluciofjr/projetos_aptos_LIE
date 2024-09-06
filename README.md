@@ -15,7 +15,7 @@ Este projeto foi desenvolvido graças a Imersão Dev_ Alura & Google
 
 ## Introdução
 
-Este projeto tem como objetivo democratizar o acesso a informações sobre projetos esportivos aptos a receberem investimentos/doações pela Lei de Incentivo ao Esporte, facilitando a consulta de dados como agência, conta bancária e empresa proponente por meio do CNPJ. A plataforma foi construída com as linguagens HTML, CSS e JavaScript, sendo que o deploy foi feito no GitHub Pages. É uma página web simples que permite que pessoas físicas e jurídicas, interessadas em investir no esporte brasileiro, encontrem rapidamente oportunidades e compreendam melhor como funciona esse incentivo que pode gerar abatimento no imposto de renda.
+Este projeto tem como objetivo democratizar o acesso a informações sobre projetos esportivos aptos a receberem investimentos/doações pela Lei de Incentivo ao Esporte, facilitando a consulta de dados como agência, conta bancária e empresa proponente por meio do CNPJ. A plataforma foi construída com as linguagens HTML, CSS e JavaScript, sendo que o deploy foi feito tanto no GitHub Pages quanto no Vercel (algo que foi ensinado na aula 5 da Imersão Dev_). É uma página web simples que permite que pessoas físicas e jurídicas, interessadas em investir no esporte brasileiro, encontrem rapidamente oportunidades e compreendam melhor como funciona esse incentivo que pode gerar abatimento no imposto de renda.
 
 Com poucos cliques, você terá acesso a informações que não estão disponíveis de forma centralizada no site oficial do Ministério do Esporte, agilizando o processo de decisão para quem busca apoiar iniciativas esportivas de fato.
 
@@ -45,7 +45,7 @@ Além do abatimento na declaração de imposto, há vários outros fatores que p
 
 ## Como utilizar o site
 
-1. Acesse o site <a href="https://marioluciofjr.github.io/projetos_aptos_LIE" target="_blank">Projetos Aptos - Lei de Incentivo ao Esporte</a>;
+1. Acesse o site <a href="https://projetos-aptos-lie.vercel.app/" target="_blank">Projetos Aptos - Lei de Incentivo ao Esporte</a>;
 2. Escolha uma das três manifestações desportivas (Educacional, Participação ou Rendimento);
 3. Escolha um projeto apto para receber a Lei de Incentivo ao Esporte;
 4. Clique no botão "🔍 Obter deliberação e cnpj";
@@ -110,7 +110,8 @@ Durante o projeto utilizei várias ferramentas muito úteis e deixo aqui os link
 + [Página da Lei de Incentivo ao Esporte](https://www.gov.br/esporte/pt-br/acoes-e-programas/lei-de-incentivo-ao-esporte) - foi essencial para eu compreender como funciona a Lei de Incentivo ao Esporte, quais são os projetos aptos para doação e investimento, quais são as etapas que cada projeto em período de captação deve seguir e assim por diante;
 + [Quer doar parte de seu Imposto de Renda para projetos da Lei de Incentivo ao Esporte? Saiba como](https://youtu.be/lutHIt0DC2Q?si=MPEiPnkbJ4JQdJCY) - vídeo didático do Ministério do Esporte que explica como funciona a doação para projetos aptos pela Lei de Incentivo ao Esporte;
 + [Guia básico de Markdown](https://docs.pipz.com/central-de-ajuda/learning-center/guia-basico-de-markdown#open) - a fim de construir um README coeso, organizado e didático;
-+ [Sintaxe básica de gravação e formatação no GitHub](https://docs.github.com/pt/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) - documentação oficial do GitHub sobre o README e vários outros detalhes importantíssimos na construção de um repositório de qualidade.
++ [Sintaxe básica de gravação e formatação no GitHub](https://docs.github.com/pt/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) - documentação oficial do GitHub sobre o README e vários outros detalhes importantíssimos na construção de um repositório de qualidade;
++ [Vercel](https://vercel.com/) - plataforma para fazer o deploy da aplicação de maneira simples e rápida.
 
 ## Contribuições
 Contribuições são bem-vindas! Se você tem sugestões para melhorar este projeto, sinta-se à vontade para criar um fork do repositório, fazer suas alterações e enviar um pull request.
