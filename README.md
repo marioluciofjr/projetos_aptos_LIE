@@ -116,6 +116,16 @@ Durante o projeto utilizei várias ferramentas muito úteis e deixo aqui os link
 ## Contribuições
 Contribuições são bem-vindas! Se você tem sugestões para melhorar este projeto, sinta-se à vontade para criar um fork do repositório, fazer suas alterações e enviar um pull request.
 
+### Etapas para contribuir
+
+1. Faça um Fork deste repositório.
+2. Clone o seu Fork para sua máquina.
+3. Crie uma branch para sua alteração.
+4. Realize as modificações necessárias.
+5. Faça um commit explicando suas alterações.
+6. Envie a branch para o GitHub.
+7. Abra um Pull Request para análise.
+
 ## Licença
 Este projeto está sob a licença MIT. Veja o arquivo [![LICENSE](https://img.shields.io/badge/LICENSE-000000?style=plastic&link=https://github.com/marioluciofjr/projetos_aptos_LIE/blob/main/LICENSE)](https://github.com/marioluciofjr/projetos_aptos_LIE/blob/main/LICENSE) para mais detalhes.
 
